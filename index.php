@@ -1,6 +1,6 @@
 <?php
 // Isto vai ter a ver só com a autenticação do utilizador
-// comentario versao 7
+// comentario versao 8
     session_start();
     if(isset($_GET["action"])){
         $islogin = false;
