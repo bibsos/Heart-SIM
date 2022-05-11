@@ -27,6 +27,7 @@
                        $islogin = true;
                        $_SESSION['username'] = $_POST['user'];
                        $_SESSION['utilizador'] = mysqli_fetch_assoc($result)["Tipo"];
+                       $_SESSION['ID'] = mysqli_fetch_assoc($result)["ID"];
                     }
                     else {
                         $_SESSION['authuser'] = 0;
