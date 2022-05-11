@@ -3,7 +3,7 @@
 ?>
     <table width="100%" border="1">
     <tr>
-        <th> Início f</th>
+        <th> Início ff</th>
         <th> <a href="showlogin.php"> Iniciar Sessão </a></th>
     </tr>
 
