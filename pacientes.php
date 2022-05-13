@@ -1,7 +1,7 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '','SIM')
+$connect = mysqli_connect('localhost', 'root', '','heartsim')
 or die('Error connecting to the server: ' . mysqli_error($connect));
-$sql = "SELECT `Nome`, `Contato`, `Cartao Saude`, `Classificacao`  FROM `paciente`, `episodio_clinico` WHERE paciente.ID = episodio_clinico.ID_paciente AND utilizador.ID = episodio_clinico.ID_utilizador AND utilizador.ID = $_SESSION('ID')";
+$sql = "SELECT `Nome`, `Contacto`, `Cartao Saude`, `Classificacao`  FROM `paciente`, `episodio_clinico` WHERE paciente.ID = episodio_clinico.ID_paciente AND utilizador.ID = episodio_clinico.ID_utilizador AND utilizador.ID = $_SESSION('ID')";
 $result = mysqli_query($connect, $sql) or die('The query failed'.mysqli_error($connect));
 ?>
 <table border="1">

@@ -70,7 +70,7 @@
                 case "homepage":
                     $links = "homepage.php";
                     break;
-                case "paciente":
+                case "pacientes":
                     $links = "pacientes.php";
                     break;
                 case "RegistarConsulta":
