@@ -79,6 +79,8 @@
                 case "Perfil":
                     $links = "perfil.php";
                     break;
+                case "NovoPaciente":
+                    $links = "novopaciente.php";
             }
             include ($links);
             ?>
