@@ -82,6 +82,10 @@
                     break;
                 case "NovoPaciente":
                     $links = "novopaciente.php";
+                    break;
+                case "AdicionarUtilizador":
+                    $links = "adicionarUtilizador.php";
+                    break;
             }
             include ($links);
             ?>

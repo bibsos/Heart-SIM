@@ -42,7 +42,7 @@
             <table width="100%" border="1">
                 <tr>
                     <th> Início </th>
-                    <th> Utilizadores </th>
+                    <th> <a href="index.php?action=AdicionarUtilizador"> Utilizadores </a> </th>
                     <th> Estatística </th>
                     <th> Perfil </th>
                     <th> <a href="index.php?action=logout"> Log out </a> </th>
