@@ -23,11 +23,12 @@
 
 
                 if($number == 1) {
+                       $row = mysqli_fetch_assoc($result);
                        $_SESSION['authuser'] = 1;
                        $islogin = true;
                        $_SESSION['username'] = $_POST['user'];
-                       $_SESSION['utilizador'] = mysqli_fetch_assoc($result)["Tipo"];
-                       $_SESSION['ID'] = mysqli_fetch_assoc($result)["ID"];
+                       $_SESSION['utilizador'] = $row["Tipo"];
+                       $_SESSION['ID'] = $row["ID"];
                     }
                     else {
                         $_SESSION['authuser'] = 0;
