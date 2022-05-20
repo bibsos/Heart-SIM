@@ -25,7 +25,7 @@
             </table>
 <?php
         break;
-        case 'MHC' || 'MHD':
+        case 'MHC':
 ?>
             <table width="100%" border="1">
                 <tr>
@@ -37,6 +37,18 @@
             </table>
 <?php
             break;
+            case 'MHD':
+                ?>
+                <table width="100%" border="1">
+                    <tr>
+                        <th> Início </th>
+                        <th> Lista de Espera </th>
+                        <th> Perfil </th>
+                        <th> <a href="index.php?action=logout"> Log out </a> </th>
+                    </tr>
+                </table>
+                <?php
+                break;
         case 'Adm':
 ?>
             <table width="100%" border="1">

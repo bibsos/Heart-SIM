@@ -14,4 +14,13 @@
         <p> <input type="submit" name="submit" value="Adicionar Utilizador"></p>
     </form>
 
-<?php 
+<?php
+    $query = "UPDATE `utilizador` set `Tipo` = tipo, `Nome` = nome, `Morada` = morada, `Contactos` = contacto,
+    `username` = username, `password` = password, `Fotografia` = foto";
+    $result = mysqli_query($connect, $query);
+ //   if (mysqli_commit(mysqli_fetch_array($result))){
+ //       echo tipo. " com o seguinte nome ".nome." adicionado com sucesso.";
+ //   }
+ //   else{
+ //       echo "Não foi possível adicionar o utilizador";
+ //   }
