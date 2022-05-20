@@ -1,8 +1,13 @@
 <?php
 $connect = mysqli_connect('localhost', 'root', '','heartsim')
 or die('Error connecting to the server: ' . mysqli_error($connect));
-$sql = "SELECT `Nome`, `Contacto`, `Cartao Saude`, `Classificacao`  FROM `paciente`, `episodio_clinico` WHERE paciente.ID = episodio_clinico.ID_paciente AND utilizador.ID = episodio_clinico.ID_utilizador AND utilizador.ID = $_SESSION('ID')";
-$result = mysqli_query($connect, $sql) or die('The query failed'.mysqli_error($connect));
+
+$query = "SELECT p.Nome AS 'Paciente', p.Contacto AS 'Contacto', p.Cartao_saude AS 'Número de Cartão Saúde', u.Nome AS 'Doutor', e.Classificacao AS 'Avaliação' FROM paciente AS p 
+    INNER JOIN episodio_clinico AS e ON e.ID_paciente=p.ID 
+    INNER JOIN utilizador AS u ON $_SESSION('ID')=e.ID_utilizador; ";
+
+
+$result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
 <table border="1">
     <tr>
@@ -20,8 +25,8 @@ $result = mysqli_query($connect, $sql) or die('The query failed'.mysqli_error($c
         ?>
     <TR>
         <TD> <?php echo $rows['Nome']; ?> </TD>
-        <TD> <?php echo $rows['Contato']; ?> </TD>
-        <TD> <?php echo $rows['Cartao Saude']; ?> </TD>
+        <TD> <?php echo $rows['Contacto']; ?> </TD>
+        <TD> <?php echo $rows['Cartao_saude']; ?> </TD>
         <TD> <?php echo $rows['Classificacao']; ?> </TD>
     </TR>
     <?php } ?>

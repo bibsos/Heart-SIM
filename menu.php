@@ -19,7 +19,7 @@
                     <th> Início </th>
                     <th> <a href="index.php?action=pacientes"> Pacientes </a> </th>
                     <th> <a href="index.php?action=RegistarConsulta"> Registo Consultas </a></th>
-                    <th> <a href="index.php?action=perfil"> Perfil </a> </th>
+                    <th> <a href="index.php?action=Perfil"> Perfil </a> </th>
                     <th> <a href="index.php?action=logout"> Log out </a> </th>
                 </tr>
             </table>
