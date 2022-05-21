@@ -3,7 +3,7 @@
     or die('Error connecting to the server: ' . mysqli_error($connect));
     $begin = mysqli_begin_transaction($connect);
 ?>
-    <form method="POST">
+    <form method="POST" action="index.php?verifyAddUser">
         <p>Tipo de utilizador: <input type="options" name="tipo"> </p>
         <p>Nome: <input type="text" name="nome"> </p>
         <p>Morada: <input type="text" name="morada"> </p>
@@ -15,12 +15,3 @@
     </form>
 
 <?php
-    $query = "UPDATE `utilizador` set `Tipo` = tipo, `Nome` = nome, `Morada` = morada, `Contactos` = contacto,
-    `username` = username, `password` = password, `Fotografia` = foto";
-    $result = mysqli_query($connect, $query);
- //   if (mysqli_commit(mysqli_fetch_array($result))){
- //       echo tipo. " com o seguinte nome ".nome." adicionado com sucesso.";
- //   }
- //   else{
- //       echo "Não foi possível adicionar o utilizador";
- //   }

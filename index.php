@@ -86,6 +86,9 @@
                 case "AdicionarUtilizador":
                     $links = "adicionarUtilizador.php";
                     break;
+                case "VerifyAddUser":
+                    $links = "insertUser.php";
+                    break;
             }
             include ($links);
             ?>
