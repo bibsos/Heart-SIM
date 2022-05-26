@@ -10,7 +10,7 @@
         $password = $_POST['password'];
         $fotografia = $_POST['foto'];
 
-        $query = "INSERT INTO `utilizador`(`ID`, `Tipo`, `Nome`, `Morada`, `Contactos`, `username`, `password`, `Fotografia`) VALUES ('','$tipo','$nome','$morada','$contacto','$username','$password','$fotografia')";
+        $query = "INSERT INTO `utilizador`(`ID`, `Tipo`, `Nome`, `Morada`, `Contactos`, `username`, `password`, `Fotografia`) VALUES (NULL,'$tipo','$nome','$morada','$contacto','$username','$password','$fotografia')";
         if(mysqli_query($connect, $query)){
             echo ("Utilizador adicionado com sucesso!");
         }
@@ -18,6 +18,6 @@
             echo "Erro a adicionar o utilizador:".mysqli_error($connect);
         }
     }
-    include(adicionarUtilizador.php);
+
 ?>
 

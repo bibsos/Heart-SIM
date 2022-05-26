@@ -1,17 +1,13 @@
-<?php
-    $connect = mysqli_connect('localhost', 'root', '','heartsim')
-    or die('Error connecting to the server: ' . mysqli_error($connect));
-    $begin = mysqli_begin_transaction($connect);
-?>
-    <form method="POST" action="index.php?action=verifyAddUser">
+
+    <form method="POST" action="verifyAddUser.php">
         <p>Tipo de utilizador:
-            <input type="radio" id="Adm" name="tipo" value="Administrador">
+            <input type="radio" id="Adm" name="tipo" value="Adm">
             <label for="Adm"> Administrador </label>
-            <input type="radio" id="MF" name="tipo" value="Médico de Família">
+            <input type="radio" id="MF" name="tipo" value="MF">
             <label for="MF"> Médico de Familía </label>
-            <input type="radio" id="MHD" name="tipo" value="Médico Hospital de Dia">
+            <input type="radio" id="MHD" name="tipo" value="MHD">
             <label for="MHD"> Médico Hospital de Dia </label>
-            <input type="radio" id="MHC" name="tipo" value=" Médico Hospital Central">
+            <input type="radio" id="MHC" name="tipo" value=" MHC">
             <label for="MGC"> Médico Hospital Central </label>
         </p>
         <p>Nome: <input type="text" name="nome"> </p>
