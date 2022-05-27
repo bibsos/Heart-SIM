@@ -18,5 +18,3 @@
         <p>Fotografia: <input type="file" name="foto"> </p>
         <p> <input type="submit" name="submit" value="Adicionar Utilizador"></p>
     </form>
-
-<?php
