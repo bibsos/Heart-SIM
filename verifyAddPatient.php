@@ -1,6 +1,7 @@
 <?php
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
+    include("index.php");
     $id = $_SESSION['ID'];
     if(isset($_POST['submit'])) {
         $nome = $_POST['nome'];
