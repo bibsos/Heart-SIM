@@ -8,7 +8,7 @@
 </form>
 
 <?php
-    $query =
+    $query = hh
 ?>
 
     <p>Data de Nascimento: <input type="date" name="data_nascimento"</p>
