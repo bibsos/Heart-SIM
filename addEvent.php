@@ -1,8 +1,27 @@
 <?php
     include(index.php);
+    $connect = mysqli_connect('localhost', 'root', '','heartsim')
+    or die('Error connecting to the server: ' . mysqli_error($connect));
     $id_user = $_SESSION['ID'];
-    // Tentar fazer um scroll de todos os pacientes do centro de saúde
+    $query_centro = "SELECT 'Centro_saude' FROM 'utilizador' WHERE ID = $id_user";
+    $centro_saude = mysqli_query($connect, $query_centro);
+    $query = "SELECT 'Nome' FROM 'paciente' WHERE 'Centro_saude' = $centro_saude";
+    $result = mysqli_query($connect, $query);
 ?>
+<table border="1">
+    <TR>
+        <TH> Pacientes </TH>
+        <?php
+        while($rows = mysqli_fetch_array($result)){
+        ?>
+    <TR>
+
+        <TD> <?php echo $rows[0]; ?> </TD>
+    </TR>
+    <?php } ?>
+</table>
+
+
 <form method="POST" action="verifyAddEvent.php">
     <p>Paciente: <input type="text" name="nome"> </p>
 </form>
