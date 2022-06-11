@@ -25,11 +25,7 @@
         if (mysqli_query($connect, $query)) {
             $find_id = "SELECT `ID` FROM paciente where $contacto = `Contacto` && $cartao_saude = `Cartao_saude`";
             $result_id = mysqli_query($connect, $find_id);
-            $doctor_pacient_connect = "INSERT INTO `episodio_clinico`(`ID`, `ID_utilizador`, `ID_paciente`, `Classificacao`, `Data_consulta`, `Data_Atendimento`, `Relatorio`, `NYHA`, `Angor`, `Sincope`, `Dispneia`, `Pressao_arterial`, `Edema_periferico`, `Crepitacoes`, `Creatinina`, `Hemoglobina`, `Ejecao_VE`) 
-            VALUES (NULL,$id,$result_id,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
-            if( mysqli_query($connect, $doctor_pacient_connect)){
-                echo("Paciente adicionado com sucesso!");
-            }
+            echo("Paciente adicionado com sucesso!");
         }
         else {
             echo "Erro a adicionar o paciente:" . mysqli_error($connect);
@@ -38,6 +34,6 @@
     else {
         echo "Este paciente já existe!";
     }
-}
+    }
 ?>
 
