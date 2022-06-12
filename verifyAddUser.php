@@ -26,8 +26,5 @@
                 echo "Utilizador já existe!";
             }
         }
-
-
-
 ?>
 
