@@ -15,7 +15,7 @@
                 //$password = hash("sha256", $_POST['pass']); //Forma de encriptar antes de enviar. Se não só encriptaria depois de chegar à base de dados desencriptado
                 $connect = mysqli_connect('localhost', 'root', '','heartsim')
                 or die('Error connecting to the server: ' . mysqli_error($connect));
-                $sql = "SELECT * FROM `utilizador` WHERE USERNAME = '$user' && PASSWORD = '$password'";
+                $sql = "SELECT * FROM `users` WHERE USERNAME = '$user' && PASSWORD = '$password'";
                 $result = mysqli_query($connect, $sql)
                 or die('The query failed: ' . mysqli_error($connect));
                 $number = mysqli_num_rows($result); //if returns 1, then is a valid user

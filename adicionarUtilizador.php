@@ -4,7 +4,7 @@
             <input type="radio" id="Adm" name="tipo" value="Adm">
             <label for="Adm"> Administrador </label>
             <input type="radio" id="MF" name="tipo" value="MF">
-            <label for="MF"> Médico de Familía </label>
+            <label for="MF"> Médico de Família </label>
             <input type="radio" id="MHD" name="tipo" value="MHD">
             <label for="MHD"> Médico Hospital de Dia </label>
             <input type="radio" id="MHC" name="tipo" value=" MHC">
