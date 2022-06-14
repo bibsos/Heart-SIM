@@ -16,9 +16,10 @@
         $cartao_saude = $_POST['cartao_saude'];
         $alergias = $_POST['alergias'];
         $nif = $_POST['nif'];
+        $centro_saude = $_POST['centro_saude'];
 
-    $query = "INSERT INTO `paciente`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`)
-        VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif')";
+    $query = "INSERT INTO `paciente`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
+        VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro_saude')";
     $confirmation = "SELECT `paciente` FROM paciente where $contacto = `Contacto` && $cartao_saude = `Cartao_saude`";
     $confirm_query = mysqli_query($connect, $confirmation);
     if (mysqli_num_rows($confirm_query) == 0) {

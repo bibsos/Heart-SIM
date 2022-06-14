@@ -9,9 +9,10 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $fotografia = $_POST['foto'];
+        $centro_saude = $_POST['centro_saude'];
 
-        $query = "INSERT INTO `utilizador`(`ID`, `Tipo`, `Nome`, `Morada`, `Contacto`, `username`, `password`, `Fotografia`) 
-        VALUES (NULL,'$tipo','$nome','$morada','$contacto','$username','$password','$fotografia')";
+        $query = "INSERT INTO `utilizador`(`ID`, `Tipo`, `Nome`, `Morada`, `Contacto`, `username`, `password`, `Fotografia`, `Centro_saude`) 
+        VALUES (NULL,'$tipo','$nome','$morada','$contacto','$username','$password','$fotografia', '$centro_saude')";
         $confirmation = "SELECT `Contacto` FROM utilizador where $contacto = `Contacto`";
         $confirm_query = mysqli_query($connect, $confirmation);
         if (mysqli_num_rows($confirm_query) == 0) {

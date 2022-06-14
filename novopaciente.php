@@ -1,4 +1,3 @@
-
 <form method="POST" action="verifyAddPatient.php">
     <p>Nome: <input type="text" name="nome"> </p>
     <p>Data de Nascimento: <input type="date" name="data_nascimento"</p>

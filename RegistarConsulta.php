@@ -6,7 +6,6 @@
     $query = "SELECT patients.Nome, patients.ID FROM `patients` WHERE patients.Centro_saude = '$nome_centro_user'";
     $result = mysqli_query($connect, $query);
 ?>
-
 <form method = "POST" action="verifyAddEvent.php">
     <p>NYHA <input type="number" name="nyha"</p>
     <p>Angor: <input type="number" name="angor"> </p>
