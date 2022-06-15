@@ -22,9 +22,15 @@
                        $_SESSION['authuser'] = 1;
                        $islogin = true;
                        $_SESSION['username'] = $_POST['user'];
-                       $_SESSION['utilizador'] = $row["Tipo"];
-                       //$_SESSION['centro_saude'] = $row["Centro_saude"];
+                       $_SESSION['utilizador'] = $row['Tipo'];
                        $_SESSION['ID'] = $row["ID"];
+                    //$_SESSION['centro'] = $row["Centro_saude"];
+                       ?>
+
+                        <form method="POST" action="Patients_without_event.php">
+                            <input type="hidden" name="centro_saude" id="centro_saude" value="<?php $row['Centro_saude']?>">
+                        </form>
+                <?php
                 }
                    else {
                        $_SESSION['authuser'] = 0;
@@ -66,19 +72,19 @@
                 case "homepage":
                     $links = "homepage.php";
                     break;
+                case "registoConsulta":
+                    $links = "Patients_without_event.php";
+                    break;
                 case "pacientes":
-                    $links = "pacientes.php";
+                    $links = "patients.php";
                     break;
-                case "RegistarConsulta":
-                    $links = "RegistarConsulta.php";
+                case "perfil":
+                    $links = "profile.php";
                     break;
-                case "Perfil":
-                    $links = "perfil.php";
+                case "novoPaciente":
+                    $links = "newPatient.php";
                     break;
-                case "NovoPaciente":
-                    $links = "novopaciente.php";
-                    break;
-                case "AdicionarUtilizador":
+                case "adicionarutilizador":
                     $links = "adicionarUtilizador.php";
                     break;
             }

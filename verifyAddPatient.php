@@ -2,7 +2,7 @@
 
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
-    include("pacientes.php");
+    include("Patients_without_event.php");
     if(isset($_POST['submit'])) {
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
