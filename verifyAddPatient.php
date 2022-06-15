@@ -1,8 +1,8 @@
 <?php
+
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
-    include("index.php");
-    $id = $_SESSION['ID'];
+    include("pacientes.php");
     if(isset($_POST['submit'])) {
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
@@ -16,17 +16,15 @@
         $cartao_saude = $_POST['cartao_saude'];
         $alergias = $_POST['alergias'];
         $nif = $_POST['nif'];
-        $centro_saude = $_POST['centro_saude'];
+        $centro = "Charneca de Caparica";
 
-    $query = "INSERT INTO `paciente`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
-        VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro_saude')";
-    $confirmation = "SELECT `paciente` FROM paciente where $contacto = `Contacto` && $cartao_saude = `Cartao_saude`";
+    $query = "INSERT INTO `patient`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
+        VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro')";
+    $confirmation = "SELECT * FROM patient where $contacto = `Contacto` && $cartao_saude = `Cartao_saude`";
     $confirm_query = mysqli_query($connect, $confirmation);
     if (mysqli_num_rows($confirm_query) == 0) {
         if (mysqli_query($connect, $query)) {
-            $find_id = "SELECT `ID` FROM paciente where $contacto = `Contacto` && $cartao_saude = `Cartao_saude`";
-            $result_id = mysqli_query($connect, $find_id);
-            echo("Paciente adicionado com sucesso!");
+           echo("Paciente adicionado com sucesso!");
         }
         else {
             echo "Erro a adicionar o paciente:" . mysqli_error($connect);

@@ -1,6 +1,4 @@
 <?php
-// Isto vai ter a ver só com a autenticação do utilizador
-// comentario versao 8
     session_start();
     if(isset($_GET["action"])){
         $islogin = false;
@@ -14,25 +12,24 @@
                 $password = $_POST['pass'];
                 //$password = hash("sha256", $_POST['pass']); //Forma de encriptar antes de enviar. Se não só encriptaria depois de chegar à base de dados desencriptado
                 $connect = mysqli_connect('localhost', 'root', '','heartsim')
-                or die('Error connecting to the server: ' . mysqli_error($connect));
+                    or die('Error connecting to the server: ' . mysqli_error($connect));
                 $sql = "SELECT * FROM `users` WHERE USERNAME = '$user' && PASSWORD = '$password'";
                 $result = mysqli_query($connect, $sql)
-                or die('The query failed: ' . mysqli_error($connect));
+                    or die('The query failed: '.mysqli_error($connect));
                 $number = mysqli_num_rows($result); //if returns 1, then is a valid user
-
-
-                if($number == 1) {
+                if($number == 1){
                        $row = mysqli_fetch_assoc($result);
                        $_SESSION['authuser'] = 1;
                        $islogin = true;
                        $_SESSION['username'] = $_POST['user'];
                        $_SESSION['utilizador'] = $row["Tipo"];
+                       //$_SESSION['centro_saude'] = $row["Centro_saude"];
                        $_SESSION['ID'] = $row["ID"];
-                    }
-                    else {
-                        $_SESSION['authuser'] = 0;
-                    }
-                    break;
+                }
+                   else {
+                       $_SESSION['authuser'] = 0;
+                   }
+                break;
             case "logout":
                 session_unset();
                 header("Location: index.php");
@@ -58,7 +55,6 @@
     </div>
     <div class="contents">
         <?php
-        // Isto vai ter a ver com as actions
             if(isset($_GET["action"])){
                 $action = $_GET["action"];
             }
