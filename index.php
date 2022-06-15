@@ -52,7 +52,7 @@
 </head>
 <body>
     <div class="logo">
-        <h1 align="left"> HeartSIM </h1>
+        <img src="SIMlogo2.jpg" width="213" height="83" alt="HeartSIM" title="" style="float:left">
     </div>
     <div class="navigation">
         <?php

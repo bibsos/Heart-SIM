@@ -8,7 +8,7 @@
             <input type="radio" id="MHD" name="tipo" value="MHD">
             <label for="MHD"> Médico Hospital de Dia </label>
             <input type="radio" id="MHC" name="tipo" value=" MHC">
-            <label for="MGC"> Médico Hospital Central </label>
+            <label for="MHC"> Médico Hospital Central </label>
         </p>
         <p>Nome: <input type="text" name="nome"> </p>
         <p>Morada: <input type="text" name="morada"> </p>
@@ -16,5 +16,6 @@
         <p>Username: <input type="username" name="username"> </p>
         <p>Password: <input type="password" name="password"> </p>
         <p>Fotografia: <input type="file" name="foto"> </p>
+        <p>Centro de saúde: <input type="text" name="centro_saude"> </p>
         <p> <input type="submit" name="submit" value="Adicionar Utilizador"></p>
     </form>
