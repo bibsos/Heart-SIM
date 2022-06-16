@@ -88,6 +88,12 @@
                 case "updateProfile":
                     $links = "updateProfile.php";
                     break;
+                case "apagarPaciente":
+                    $links = "deletePatient.php";
+                    break;
+                case "listUsers":
+                    $links = "listUsers.php";
+                    break;
             }
             include ($links);
             ?>

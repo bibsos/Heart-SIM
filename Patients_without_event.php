@@ -2,10 +2,6 @@
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
         or die('Error connecting to the server: ' . mysqli_error($connect));
     $id = $_SESSION['ID'];
-    print '<pre>';
-    var_dump($id);
-    print '</pre>';
-
     $query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id'";
     $result_centro = mysqli_query($connect, $query_centro);
     $centro_saude = mysqli_fetch_array($result_centro)[0];
@@ -19,6 +15,7 @@
     <tr>
         <td> <a href="index.php?action=novoPaciente"> Adicionar Paciente </a> </td>
         <td> <a href="index.php?action=novaConsulta"> Adicionar Consulta </a> </td>
+        <td> <a href="index.php?action=apagarPaciente"> Apagar Paciente </a> </td>
     </tr>
 </table>
 <table border="1">
