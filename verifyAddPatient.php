@@ -21,12 +21,24 @@
         $contacto = $_POST['contacto'];
         $localidade = $_POST['localidade'];
         $distrito = $_POST['distrito'];
-        $fotografia = $_POST['foto'];
         $email = $_POST['email'];
         $cartao_saude = $_POST['cartao_saude'];
         $alergias = $_POST['alergias'];
         $nif = $_POST['nif'];
         $centro = $centro_saude;
+
+        if(!empty($_FILES["image"]["name"])){
+            $fileName = basename($_FILES["image"]["name"]);
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+            if(in_array($fileType, $allowTypes)){
+                $image = addslashes($_FILES['image']['tmp_name']);
+                $fotografia = addslashes(file_get_contents($image));
+            }
+        }
+        else {$fotografia=NULL;}
+
 
     $query = "INSERT INTO `patient`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
         VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro')";

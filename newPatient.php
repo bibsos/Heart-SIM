@@ -27,7 +27,12 @@ echo $centro_saude;
     <p>Contacto: <input type="number" name="contacto"> </p>
     <p>Email: <input type="email" name="email"</p>
     <p>Cartão de Saúde: <input type="number" name="cartao_saude"</p>
-    <p>Fotografia: <input type="file" name="foto"> </p>
+
+    <br>
+    <p><label for = "foto"> <span <b> Fotografia do paciente: </b></span></label></p>
+    <input type="file" accept="image/*" id="foto" name="image" > </p>
+    <br>
+
     <p>Alergias: <input type="text" name="alergias"> </p>
     <p>NIF: <input type="number" name="nif"> </p>
     <input type="hidden" name="id" value="<?php $id2 ?>">
