@@ -9,7 +9,8 @@ $centro_saude = mysqli_fetch_array($result_centro)[0];
 echo $centro_saude;
 ?>
 
-
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <h1> Novo paciente </h1>
 <form method="POST" action="verifyAddPatient.php">
     <p>Nome: <input type="text" name="nome"> </p>
     <p>Data de Nascimento: <input type="date" name="data_nascimento"</p>
@@ -33,4 +34,4 @@ echo $centro_saude;
     <input type="hidden" name="centro" value="<?php $centro_saude ?>"
     <p> <input type="submit" name="submit" value="Adicionar Paciente"></p>
 </form>
-
+    </div>

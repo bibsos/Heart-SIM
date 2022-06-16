@@ -14,6 +14,9 @@
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
     echo count($result);
 ?>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <h1>  Nova Consulta </h1>
 <form method = "POST" action="verifyAddEvent.php">
     <label for = "paciente"> Selecione o paciente: </label>
     <select name="paciente" id="paciente">
@@ -37,3 +40,4 @@
     <p>Ejeção VE: <input type="number" name="ejecao_ve"> </p>
     <p> <input type="submit" name="submit" value="Criar Consulta"></p>
 </form>
+</div>
