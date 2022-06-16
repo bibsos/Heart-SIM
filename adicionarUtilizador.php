@@ -1,4 +1,5 @@
 
+<div class="w3-row-padding w3-padding-64 w3-container">
     <form method="POST" action="verifyAddUser.php">
         <p>Tipo de utilizador:
             <input type="radio" id="Adm" name="tipo" value="Adm">
@@ -19,3 +20,4 @@
         <p>Centro de saúde: <input type="text" name="centro_saude"> </p>
         <p> <input type="submit" name="submit" value="Adicionar Utilizador"></p>
     </form>
+    </div>

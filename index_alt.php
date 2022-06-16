@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>W3.CSS Template</title>
+<title> HeartSIM </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -21,8 +21,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
@@ -40,27 +40,28 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 <!-- Header -->
-<header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">START PAGE</h1>
-  <p class="w3-xlarge">Template by w3.css</p>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+<header class="w3-container w3-teal w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Bem vindo!</h1>
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Iniciar sessão </button>
 </header>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-twothird">
+    <div class="w3-half">
       <h1>HeartSIM</h1>
       <h5 class="w3-padding-32">O que é a plataforma HeartSim? </h5>
 
-      <p class="w3-text-grey"> Esta plataforma foi criada com o objetivo de  auxiliar os prestadores de cuidados de saúde na gestão das filas de espera nos Hospitais de Dia e nos serviços de urgência dos hospitais centrais relativamente a pacientes com Insuficiência Cardíaca (IC).
-      A insuficiência cardíaca é uma doença crónica que afeta uma grande percentagem de adultos e idosos em Portugal.
-
-      </p>
+      <p class="w3-text-grey"> Esta plataforma foi criada com o objetivo de  auxiliar os prestadores de cuidados de
+          saúde na gestão das filas de espera nos Hospitais de Dia e nos serviços de urgência dos hospitais centrais
+          relativamente a pacientes com Insuficiência Cardíaca (IC).
+          Assim, HeartSIM irá permitir organizar o atendimento de doentes entre os Médicos de Família e os Médicos de
+          Dia ou de um Hospital Central.
+     </p>
     </div>
 
     <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+        <img src="SIMlogo2.jpg" width="426" height="166" alt="HeartSIM" title="" style="float:none">
     </div>
   </div>
 </div>
@@ -68,23 +69,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
-    </div>
+    <div class="">
+      <h5 class="w3-padding-32">Porquê HeartSIM?</h5>
 
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Porquê ?</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="w3-text-grey">  A insuficiência cardíaca é uma doença crónica que afeta uma grande percentagem de adultos e idosos em Portugal.
+      Muitas vezes, a procura imediata de auxílio nos serviços de urgências por parte destes pacientes provoca congestionamentos nos mesmos.
+      É por isso importante coordenar os serviços relativos aos Centros de Saúde e Hospitais de Dia ou Centrais, de forma a melhor gerir o atendimento
+      destes doentes.
+      </p>
     </div>
   </div>
-</div>
-
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
 </div>
 
 <!-- Footer -->
@@ -97,7 +91,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
  </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+ <p>© HeartSIM - 2021-2022</p>
 </footer>
 
 <script>
