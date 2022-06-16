@@ -61,9 +61,9 @@
     </style>
 </head>
 <body>
-    <div class="logo">
+    <!--<div class="logo">
         <img src="SIMlogo2.jpg" width="213" height="83" alt="HeartSIM" title="" style="float:left">
-    </div>
+    </div>  -->
     <div class="navigation">
         <?php
             include("menu.php");

@@ -11,9 +11,9 @@
         $fotografia = $_POST['foto'];
         $centro_saude = $_POST['centro_saude'];
 
-        $query = "INSERT INTO `utilizador`(`ID`, `Tipo`, `Nome`, `Morada`, `Contacto`, `username`, `password`, `Fotografia`, `Centro_saude`) 
+        $query = "INSERT INTO `users`(`ID`, `Tipo`, `Nome`, `Morada`, `Contacto`, `username`, `password`, `Fotografia`, `Centro_saude`) 
         VALUES (NULL,'$tipo','$nome','$morada','$contacto','$username','$password','$fotografia', '$centro_saude')";
-        $confirmation = "SELECT `Contacto` FROM utilizador where $contacto = `Contacto`";
+        $confirmation = "SELECT `Contacto` FROM users where $contacto = `Contacto`";
         $confirm_query = mysqli_query($connect, $confirmation);
         if (mysqli_num_rows($confirm_query) == 0) {
             if (mysqli_query($connect, $query)) {

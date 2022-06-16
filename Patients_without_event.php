@@ -15,6 +15,7 @@
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
 <div class="w3-row-padding w3-padding-64 w3-container">
+    <h1> Registo de consultas </h1>
 <table border="1">
     <tr>
         <td> <form action="index.php?action=novoPaciente"> <input type="submit" name="submit" value="Adicionar Paciente"> </form>  </td>
