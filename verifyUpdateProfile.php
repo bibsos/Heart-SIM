@@ -42,12 +42,11 @@ if(isset($_POST['submit'])) {
     if(empty($centro_saude)){
         $centro_saude=$row['Centro_saude'];
     }
-
     $update = "UPDATE `users` SET `ID`=$ID,`Tipo`=$tipo,`Nome`=$nome,`Morada`=$morada,`Contacto`=$contacto,`username`=$username,`password`=$password,`Fotografia`=$fotografia,`Centro_saude`=$centro_saude WHERE 1";
     $confirmation = "SELECT `Contacto` FROM utilizador where $contacto = `Contacto`";
     $confirm_query = mysqli_query($connect, $confirmation);
-    if (mysqli_num_rows($confirm_query) == 0) {
-        if (mysqli_query($connect, $query)) {
+    if (mysqli_num_rows($confirm_query) == 0){
+        if (mysqli_query($connect, $query)){
             echo("Alterações adicionadas com sucesso!");
         }
         else {

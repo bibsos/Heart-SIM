@@ -3,7 +3,7 @@
 $connect = mysqli_connect('localhost', 'root', '','heartsim')
 or die('Error connecting to the server: ' . mysqli_error($connect));
 $ID = $_SESSION['ID'];
-$query = "SELECT * FROM `patient` AS u WHERE u.ID = $ID";
+$query = "SELECT * FROM `patient` AS p WHERE p.ID = '$ID'";
 $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 $row = mysqli_fetch_array($result);
 
@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
         $nome=$row['Nome'];
     }
     if(empty($data)){
-        $data=$row['Data Nascimento'];
+        $data=$row['Data_Nascimento'];
     }
     if(empty($sexo)){
         $sexo=$row['Sexo'];
@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
         $cartao_saude=$row['Cartao_saude'];
     }
     if(empty($alergias)){
-        $alergias=$row['Lista Alergias'];
+        $alergias=$row['Lista_Alergias'];
     }
     if(empty($nif)){
         $nif=$row['NIF'];
