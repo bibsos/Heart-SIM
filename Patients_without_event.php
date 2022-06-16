@@ -2,23 +2,23 @@
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
         or die('Error connecting to the server: ' . mysqli_error($connect));
     $id = $_SESSION['ID'];
-    $centro = $_SESSION["centro_saude"];
-    echo $id;
-    echo $centro;
-    //$id = "2";
+    print '<pre>';
+    var_dump($id);
+    print '</pre>';
+
     $query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id'";
-    $centro_saude = mysqli_query($connect, $query_centro);
-    $nome_centro_user = mysqli_fetch_array($centro_saude)[0];
+    $result_centro = mysqli_query($connect, $query_centro);
+    $centro_saude = mysqli_fetch_array($result_centro)[0];
     $query = "SELECT p.Nome AS 'Paciente', p.Contacto AS 'Contacto', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p 
         LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
-        WHERE p.Centro_saude = '$nome_centro_user' ";
+        WHERE p.Centro_saude = '$centro_saude' ";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
 
 <table border="1">
     <tr>
-        <td> <form action="index.php?action=novoPaciente"> <input type="submit" name="submit" value="Adicionar Paciente"> </form>  </td>
-        <td> <form action="index.php?action=RegistarConsulta"> <input type="submit" name="submit" value="Adicionar Consulta"> </form> </td>
+        <td> <a href="index.php?action=novoPaciente"> Adicionar Paciente </a> </td>
+        <td> <a href="index.php?action=novaConsulta"> Adicionar Consulta </a> </td>
     </tr>
 </table>
 <table border="1">

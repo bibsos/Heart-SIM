@@ -1,4 +1,3 @@
-
 <form method="POST" action="verifyUpdateProfile.php">
     <p>Nome: <input type="text" name="nome"> </p>
     <p>Morada: <input type="text" name="morada"> </p>

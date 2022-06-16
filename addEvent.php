@@ -1,5 +1,4 @@
 <?php
-    include(index.php);
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
     $id_user = $_SESSION['ID'];

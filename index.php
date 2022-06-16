@@ -24,13 +24,8 @@
                        $_SESSION['username'] = $_POST['user'];
                        $_SESSION['utilizador'] = $row['Tipo'];
                        $_SESSION['ID'] = $row["ID"];
-                    //$_SESSION['centro'] = $row["Centro_saude"];
-                       ?>
 
-                        <form method="POST" action="Patients_without_event.php">
-                            <input type="hidden" name="centro_saude" id="centro_saude" value="<?php $row['Centro_saude']?>">
-                        </form>
-                <?php
+                    //$_SESSION['centro'] = $row["Centro_saude"];
                 }
                    else {
                        $_SESSION['authuser'] = 0;
@@ -39,7 +34,7 @@
             case "logout":
                 session_unset();
                 header("Location: index.php");
-                break;
+                exit;
         }
     }
 ?>
@@ -83,6 +78,9 @@
                     break;
                 case "novoPaciente":
                     $links = "newPatient.php";
+                    break;
+                case "novaConsulta":
+                    $links = "newEvent.php";
                     break;
                 case "adicionarutilizador":
                     $links = "adicionarUtilizador.php";
