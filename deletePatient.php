@@ -10,7 +10,8 @@
            WHERE p.Centro_saude = '$centro_saude'";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
-
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <h1>  Apagar paciente </h1>
 <form method = "POST" action="verifyDeletePatient.php">
     <label for = "id"> Selecione o paciente: </label>
     <select name="id" id="id">
@@ -25,3 +26,4 @@
     <input type="submit" name="submit" value="Apagar">
 </form>
 <form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
+</div>

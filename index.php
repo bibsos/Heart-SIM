@@ -93,7 +93,7 @@
                 case "novaConsulta":
                     $links = "newEvent.php";
                     break;
-                case "adicionarutilizador":
+                case "adicionarUtilizador":
                     $links = "adicionarUtilizador.php";
                     break;
                 case "updateProfile":
@@ -104,6 +104,9 @@
                     break;
                 case "listUsers":
                     $links = "listUsers.php";
+                    break;
+                case "verifyUpdate":
+                    $links = "verifyUpdateProfile.php";
                     break;
             }
             include ($links);

@@ -3,7 +3,7 @@
 $connect = mysqli_connect('localhost', 'root', '','heartsim')
 or die('Error connecting to the server: ' . mysqli_error($connect));
 $ID = $_SESSION['ID'];
-$query = "SELECT * FROM `utilizador` AS u WHERE u.ID = $ID";
+$query = "SELECT * FROM `users` AS u WHERE u.ID = $ID";
 $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 $row = mysqli_fetch_array($result);
 
@@ -42,8 +42,8 @@ if(isset($_POST['submit'])) {
     if(empty($centro_saude)){
         $centro_saude=$row['Centro_saude'];
     }
-    $update = "UPDATE `users` SET `ID`=$ID,`Tipo`=$tipo,`Nome`=$nome,`Morada`=$morada,`Contacto`=$contacto,`username`=$username,`password`=$password,`Fotografia`=$fotografia,`Centro_saude`=$centro_saude WHERE 1";
-    $confirmation = "SELECT `Contacto` FROM utilizador where $contacto = `Contacto`";
+    $update = "UPDATE `users` AS u SET u.ID=$ID,u.Tipo=$tipo,u.Nome=$nome,u.Morada=$morada,u.Contacto=$contacto,u.username=$username,u.password=$password,u.Fotografia=$fotografia,u.Centro_saude=$centro_saude WHERE u.ID=$ID ";
+    $confirmation = "SELECT `Contacto` FROM users where $contacto = `Contacto`";
     $confirm_query = mysqli_query($connect, $confirmation);
     if (mysqli_num_rows($confirm_query) == 0){
         if (mysqli_query($connect, $query)){
