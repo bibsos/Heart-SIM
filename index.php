@@ -46,9 +46,9 @@
     <title> HeartSIM </title>
 </head>
 <body>
-    <div class="logo">
+    <!--<div class="logo">
         <img src="SIMlogo2.jpg" width="213" height="83" alt="HeartSIM" title="" style="float:left">
-    </div>
+    </div>  -->
     <div class="navigation">
         <?php
             include("menu.php");
@@ -99,9 +99,20 @@
             ?>
 
     </div>
-    <div class="footer" style="background-color:#234567;color: white">
+    <!-- Footer -->
+    <!--<div class="footer" style="background-color:#234567;color: white">
         <h3 align="center"> © HeartSIM - 2021-2022 </h3>
-    </div>
-
-</body>
-</html>
+    </div>-->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+        <div class="w3-xlarge w3-padding-32">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <p>© HeartSIM - 2021-2022</p>
+    </footer>
+    <script>
+        // Used to toggle the menu on small screens when clicking on the menu button

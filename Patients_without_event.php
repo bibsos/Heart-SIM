@@ -10,7 +10,8 @@
         WHERE p.Centro_saude = '$centro_saude' ";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
-
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <h1> Registo de consultas </h1>
 <table border="1">
     <tr>
         <td> <a href="index.php?action=novoPaciente"> Adicionar Paciente </a> </td>
@@ -34,3 +35,4 @@
     </TR>
     <?php } ?>
 </table>
+</div>
