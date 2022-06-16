@@ -1,9 +1,19 @@
 <?php
-
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
-    include("Patients_without_event.php");
+    //$id1 = $_SESSION['ID'];
+    //print '<pre>';
+    //var_dump($id1);
+    //print '</pre>';
+    //echo $id1;
+
     if(isset($_POST['submit'])) {
+        $id3 = $_POST['id'];
+        echo $id3;
+        //$query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id3'";
+        //$result_centro = mysqli_query($connect, $query_centro);
+        //$centro_saude = mysqli_fetch_array($result_centro)[0];
+        $centro_saude=$_POST['centro'];
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
         $sexo = $_POST['Sexo'];
@@ -16,7 +26,7 @@
         $cartao_saude = $_POST['cartao_saude'];
         $alergias = $_POST['alergias'];
         $nif = $_POST['nif'];
-        $centro = "Charneca de Caparica";
+        $centro = $centro_saude;
 
     $query = "INSERT INTO `patient`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
         VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro')";
@@ -35,4 +45,5 @@
     }
     }
 ?>
+<form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
 

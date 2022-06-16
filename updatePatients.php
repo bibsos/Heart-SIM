@@ -1,16 +1,7 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '','heartsim')
-or die('Error connecting to the server: ' . mysqli_error($connect));
-$id2 = $_SESSION['ID'];
-echo $id2;
-$query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id2'";
-$result_centro = mysqli_query($connect, $query_centro);
-$centro_saude = mysqli_fetch_array($result_centro)[0];
-echo $centro_saude;
 ?>
 
-
-<form method="POST" action="verifyAddPatient.php">
+<form method="POST" action="verifyUpdatePatients.php">
     <p>Nome: <input type="text" name="nome"> </p>
     <p>Data de Nascimento: <input type="date" name="data_nascimento"</p>
     <p>Sexo:
@@ -29,8 +20,5 @@ echo $centro_saude;
     <p>Fotografia: <input type="file" name="foto"> </p>
     <p>Alergias: <input type="text" name="alergias"> </p>
     <p>NIF: <input type="number" name="nif"> </p>
-    <input type="hidden" name="id" value="<?php $id2 ?>">
-    <input type="hidden" name="centro" value="<?php $centro_saude ?>"
     <p> <input type="submit" name="submit" value="Adicionar Paciente"></p>
 </form>
-

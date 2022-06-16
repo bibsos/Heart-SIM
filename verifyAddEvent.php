@@ -28,3 +28,5 @@
             echo "Erro a adicionar consulta:" . mysqli_error($connect);
         }
     }
+?>
+<form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>

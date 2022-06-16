@@ -13,6 +13,7 @@
     <tr> <td> Contacto: <?php echo $row['Contacto']; ?> </td></tr>
     <tr> <td> Fotografia: <?php echo $row['Fotografia']; ?> </td> </tr>
     <tr> <td> Username:  <?php echo $row['username']; ?> </td></tr>
+    <td> <form action="index.php?action=updateProfile"> <input type="submit" name="submit" value="Edit"> </form>  </td>
 </table>
 
 <form
