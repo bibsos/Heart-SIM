@@ -1,5 +1,4 @@
 <?php
-//novo
     session_start();
     if(isset($_GET["action"])){
         $islogin = false;
@@ -11,14 +10,16 @@
             case "verifylogin":
                 $user = $_POST['user'];
                 $password = $_POST['pass'];
-                //$password = hash("sha256", $_POST['pass']); //Forma de encriptar antes de enviar. Se não só encriptaria depois de chegar à base de dados desencriptado
                 $connect = mysqli_connect('localhost', 'root', '','heartsim')
                     or die('Error connecting to the server: ' . mysqli_error($connect));
-                $sql = "SELECT * FROM `users` WHERE USERNAME = '$user' && PASSWORD = '$password'";
+                $sql = "SELECT * FROM `users` WHERE USERNAME = '$user'";
                 $result = mysqli_query($connect, $sql)
-                    or die('The query failed: '.mysqli_error($connect));
-                $number = mysqli_num_rows($result); //if returns 1, then is a valid user
-                if($number == 1){
+                or die('The query failed: '.mysqli_error($connect));
+                $password_decode = false;
+                if(mysqli_num_rows($result) == 1){
+                    $password_decode = password_verify($password, $result['pass']);
+                }
+                if($password_decode){
                        $row = mysqli_fetch_assoc($result);
                        $_SESSION['authuser'] = 1;
                        $islogin = true;

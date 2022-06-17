@@ -7,7 +7,7 @@
         $morada = $_POST['morada'];
         $contacto = $_POST['contacto'];
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = hash("sha256", $_POST['password']);
         $fotografia = $_POST['foto'];
         $centro_saude = $_POST['centro_saude'];
 
