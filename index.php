@@ -13,14 +13,14 @@
                 $connect = mysqli_connect('localhost', 'root', '','heartsim')
                     or die('Error connecting to the server: ' . mysqli_error($connect));
                 $sql = "SELECT * FROM `users` WHERE USERNAME = '$user'";
-                $result = mysqli_query($connect, $sql)
-                or die('The query failed: '.mysqli_error($connect));
+                $result = mysqli_query($connect, $sql) or die('The query failed: '.mysqli_error($connect));
                 $password_decode = false;
+                $row = mysqli_fetch_assoc($result);
                 if(mysqli_num_rows($result) == 1){
-                    $password_decode = password_verify($password, $result['pass']);
+                    $pass_login = $row['password'];
+                    $password_decode = password_verify($password, $pass_login);
                 }
                 if($password_decode){
-                       $row = mysqli_fetch_assoc($result);
                        $_SESSION['authuser'] = 1;
                        $islogin = true;
                        $_SESSION['username'] = $_POST['user'];

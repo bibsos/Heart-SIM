@@ -11,7 +11,7 @@
         $fotografia = $_POST['foto'];
         $centro_saude = $_POST['centro_saude'];
 
-        $query = "INSERT INTO `users`(`ID`, `Tipo`, `Nome`, `Morada`, `Contacto`, `username`, `password`, `Fotografia`, `Centro_saude`) 
+        $query = "INSERT INTO `users`(`ID`, `Tipo`, `Nome`, `Morada`, `Contacto`, `username`, `password`, `Fotografia`, `Instituicao`) 
         VALUES (NULL,'$tipo','$nome','$morada','$contacto','$username','$password','$fotografia', '$centro_saude')";
         $confirmation = "SELECT `Contacto` FROM users where $contacto = `Contacto`";
         $confirm_query = mysqli_query($connect, $confirmation);
@@ -29,3 +29,4 @@
         }
 ?>
 
+<form action="index.php?action=listUsers"> <input type="submit" name="submit" value="Voltar"> </form>

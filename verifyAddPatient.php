@@ -8,12 +8,14 @@
     //echo $id1;
 
     if(isset($_POST['submit'])) {
-        $id3 = $_POST['id'];
-        echo $id3;
+        //$id3 = $_POST['id'];
+        //echo $id3;
         //$query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id3'";
         //$result_centro = mysqli_query($connect, $query_centro);
         //$centro_saude = mysqli_fetch_array($result_centro)[0];
-        $centro_saude=$_POST['centro'];
+        $id = "2";
+        //$centro_saude=$_POST['centro'];
+        $centro_saude = "Charneca de Caparica";
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
         $sexo = $_POST['Sexo'];
@@ -42,7 +44,7 @@
 
     $query = "INSERT INTO `patient`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
         VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro')";
-    $confirmation = "SELECT * FROM patient where $contacto = `Contacto` && $cartao_saude = `Cartao_saude`";
+    $confirmation = "SELECT * FROM patient where $cartao_saude = `Cartao_saude`";
     $confirm_query = mysqli_query($connect, $confirmation);
     if (mysqli_num_rows($confirm_query) == 0) {
         if (mysqli_query($connect, $query)) {
