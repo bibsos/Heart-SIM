@@ -10,22 +10,51 @@
 <table border="1">
     <tr>
         <td> <a href="index.php?action=adicionarUtilizador"> Adicionar Utilizador </a> </td>
-        <td> <a href="index.php?action=updateProfile"> Editar Utilizador </a> </td>
         <td> <a href="index.php?action=apagarPaciente"> Apagar Utilizador </a> </td>
     </tr>
 </table> <br>
-<table border="1">
-    <TR>
-        <TH> Tipo </TH>
-        <TH> Nome </TH>
-    </TR>
-    <?php
-        while($rows = mysqli_fetch_array($result)){
-           ?>
-    <TR>
-        <TD> <?php echo $rows[0]; ?> </TD>
-        <TD> <?php echo $rows[1]; ?> </TD>
-    </TR>
-    <?php } ?>
-</table>
+
+<form method="GET" action="searchUser.php">
+    <h3> Procurar por: </h3>
+    <table>
+        <tr>
+            <td> Primeiro Nome: <input type="text" id="firstname" name="firstname"> </td>
+            <td> Apelido: <input type="text" id="surname" name="surname"></td>
+            <td> Username: <input type="text" id="username" name="username"></td>
+        </tr>
+        <tr>
+            <td> <input type="submit" id="submit_search" name="submit_search" value="Procurar"></td>
+        </tr>
+    </table>
+</form>
+<form method="GET" action="seeProfile.php">
+    <h3> Ver perfil: </h3>
+    <table>
+        <tr>
+            <td> Username: <input type="text" id="username" name="username"></td>
+        </tr>
+        <tr>
+            <td> <input type="submit" id="submit" name="submit" value="Procurar"></td>
+        </tr>
+    </table>
+</form>
+<div>
+    <table border="1">
+        <TR>
+            <TH> Tipo </TH>
+            <TH> Nome </TH>
+            <TH> Instituição </TH>
+        </TR>
+        <?php
+            while($rows = mysqli_fetch_array($result)){
+               ?>
+        <TR>
+            <TD> <?php echo $rows['Tipo']; ?> </TD>
+            <TD> <?php echo $rows['Nome']; ?> </TD>
+            <TD> <?php echo $rows['Centro_saude'];?> </TD>
+        </TR>
+        <?php } ?>
+    </table>
 </div>
+
+
