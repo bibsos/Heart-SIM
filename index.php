@@ -42,7 +42,7 @@
                   // else {
                   //     $_SESSION['authuser'] = 0;
                   // }
-                include("verifylogin.php");
+                include("homepage.php");
                 break;
             case "logout":
                 session_unset();
