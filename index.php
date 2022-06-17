@@ -94,7 +94,7 @@
                     $links = "Patients_without_event.php";
                     break;
                 case "pacientes":
-                    $links = "patients.php";
+                    $links = "Patients_with_event.php";
                     break;
                 case "perfil":
                     $links = "profile.php";
