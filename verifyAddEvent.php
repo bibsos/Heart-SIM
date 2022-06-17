@@ -1,10 +1,9 @@
 <?php
-    include('index.php');
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
     if(isset($_POST['submit'])) {
         //$id_paciente = $_POST['paciente'];
-        $id_paciente = 17;
+        $id_paciente = 16;
         echo $id_paciente;
         $nyha = $_POST['nyha'];
         $angor = $_POST['angor'];
@@ -19,6 +18,7 @@
         //$id = $_SESSION['ID'];
         $id = 7;
         $class=0;
+
 
 // Terminal Node 1
 if ($pa <= 89.5){
@@ -110,16 +110,36 @@ if($pa > 89.5 && $angor <= 0.5 && $nyha > 3.5){
 if($pa> 89.5 && $nyha > 2.5 && $angor > 0.5){
     $class = 2;
 }
+?>
+<div>
+    <table>
+        <tr>
+            <td> Classificação sugerida </td>
+            <td> Classificação final </td>
+        </tr>
+        <tr>
+            <td> <?php echo ($class); ?> </td>
+            <td> <form method="post"> <input type="number" id="class_final" name="class_final"> </form> </td>
+        </tr>
+    </table>
+            <p> <input type="submit" name="submit" value="Confirmar classificação"> </p>
+            </form>
+</div>
 
+<?php
+        if(isset($_POST['submit'])){
+        $class_final = $_POST['class_final'];
         $query = "INSERT INTO `episodio_clinico`(`ID`, `ID_utilizador`, `ID_paciente`, `Classificacao`, `Data_consulta`, `Data_Atendimento`, `Relatorio`, `NYHA`, `Angor`, `Sincope`, `Dispneia`, `Pressao_arterial`, `Edema_periferico`, `Crepitacoes`, `Creatinina`, `Hemoglobina`, `Ejecao_VE`)
-            VALUES (NULL,'$id','$id_paciente',$class,NULL,NULL,NULL,'$nyha','$angor','$sincope','$dispneia','$pa','$edema','$crepitacoes','$creatinina','$hemoglobina','$ejecao_ve')";
+            VALUES (NULL,'$id','$id_paciente',$class_final,NULL,NULL,NULL,'$nyha','$angor','$sincope','$dispneia','$pa','$edema','$crepitacoes','$creatinina','$hemoglobina','$ejecao_ve')";
         if (mysqli_query($connect, $query)) {
                 echo("Consulta adicionada!");
             }
         else {
             echo "Erro a adicionar consulta:" . mysqli_error($connect);
         }
+        }
     }
+
 ?>
 <form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
 

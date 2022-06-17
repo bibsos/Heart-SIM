@@ -28,6 +28,7 @@
         $alergias = $_POST['alergias'];
         $nif = $_POST['nif'];
         $centro = $centro_saude;
+        $fotografia=$_POST['foto'];
 
         if(!empty($_FILES["image"]["name"])){
             $fileName = basename($_FILES["image"]["name"]);
@@ -40,7 +41,6 @@
             }
         }
         else {$fotografia=NULL;}
-
 
     $query = "INSERT INTO `patient`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
         VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro')";
