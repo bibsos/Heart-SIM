@@ -11,7 +11,7 @@ echo $centro_saude;
 
 <div class="w3-row-padding w3-padding-64 w3-container">
     <h1> Novo paciente </h1>
-<form method="POST" action="verifyAddPatient.php">
+<form method="POST" enctype="multipart/form-data" action="index.php?action=verifyAddPatient">
     <p>Nome: <input type="text" name="nome"> </p>
     <p>Data de Nascimento: <input type="date" name="data_nascimento"</p>
     <p>Sexo:
@@ -30,13 +30,13 @@ echo $centro_saude;
 
     <br>
     <p><label for = "foto"> <span <b> Fotografia do paciente: </b></span></label></p>
-    <input type="file" accept="image/*" id="foto" name="image" > </p>
+    <input type="file" accept="image/*" id="foto" name="foto" > </p>
     <br>
 
     <p>Alergias: <input type="text" name="alergias"> </p>
     <p>NIF: <input type="number" name="nif"> </p>
-    <input type="hidden" name="id" value="<?php $id2 ?>">
-    <input type="hidden" name="centro" value="<?php $centro_saude ?>"
+    <input type="hidden" name="id" value="<?php echo $id2 ?>">
+    <input type="hidden" name="centro" value="<?php echo $centro_saude ?>">
     <p> <input type="submit" name="submit" value="Adicionar Paciente"></p>
 </form>
     </div>

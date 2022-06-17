@@ -15,6 +15,7 @@
         //$centro_saude = mysqli_fetch_array($result_centro)[0];
         //$id = "2";
         $centro_saude=$_POST['centro'];
+        echo $centro_saude;
         //$centro_saude = "Charneca de Caparica";
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
@@ -28,15 +29,14 @@
         $alergias = $_POST['alergias'];
         $nif = $_POST['nif'];
         $centro = $centro_saude;
-        $fotografia=$_POST['foto'];
 
-        if(!empty($_FILES["image"]["name"])){
-            $fileName = basename($_FILES["image"]["name"]);
+        if(!empty($_FILES["foto"]["name"])){
+            $fileName = basename($_FILES["foto"]["name"]);
             $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
 
             $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
             if(in_array($fileType, $allowTypes)){
-                $image = addslashes($_FILES['image']['tmp_name']);
+                $image = addslashes($_FILES['foto']['tmp_name']);
                 $fotografia = addslashes(file_get_contents($image));
             }
         }
@@ -59,5 +59,5 @@
     }
     }
 ?>
-<form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
+<form type="POST" action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
 

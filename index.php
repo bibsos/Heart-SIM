@@ -117,7 +117,19 @@
                 case "listUsers":
                     $links = "listUsers.php";
                     break;
+                case "verifylogin":
+                    $links = "verifylogin.php";
+                    break;
+                case "showlogin":
+                    $links = "showlogin.php";
+                    break;
+                case "verifyAddPatient":
+                    $links="verifyAddPatient.php";
+                    break;
+                default:
+                    $links="error";
             }
+            echo $action;
             include ($links);
             ?>
 
