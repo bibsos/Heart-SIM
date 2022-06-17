@@ -100,13 +100,13 @@
                     $links = "profile.php";
                     break;
                 case "novoPaciente":
-                    $links = "newPatient.php";
+                    $links = "addPatient.php";
                     break;
                 case "novaConsulta":
-                    $links = "newEvent.php";
+                    $links = "addEvent.php";
                     break;
                 case "adicionarUtilizador":
-                    $links = "adicionarUtilizador.php";
+                    $links = "addUser.php";
                     break;
                 case "updateProfile":
                     $links = "updateProfile.php";

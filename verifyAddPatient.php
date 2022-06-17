@@ -8,14 +8,14 @@
     //echo $id1;
 
     if(isset($_POST['submit'])) {
-        //$id3 = $_POST['id'];
+        $id3 = $_POST['id'];
         //echo $id3;
         //$query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id3'";
         //$result_centro = mysqli_query($connect, $query_centro);
         //$centro_saude = mysqli_fetch_array($result_centro)[0];
-        $id = "2";
-        //$centro_saude=$_POST['centro'];
-        $centro_saude = "Charneca de Caparica";
+        //$id = "2";
+        $centro_saude=$_POST['centro'];
+        //$centro_saude = "Charneca de Caparica";
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
         $sexo = $_POST['Sexo'];
