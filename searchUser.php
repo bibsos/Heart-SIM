@@ -8,25 +8,25 @@
             $surname = $_GET['surname'];
             if(isset($_GET['username'])) {
                 $username = $_GET['username'];
-                $query = "SELECT u.Tipo, u.Nome, u.Centro_saude FROM `users` AS u WHERE u.Nome LIKE '$firstname%$surname%' AND u.username = '$username'";
+                $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM `users` AS u WHERE u.Nome LIKE '$firstname%$surname%' AND u.username = '$username'";
             }
-            $query = "SELECT u.Tipo, u.Nome, u.Centro_saude FROM `users` AS u WHERE u.Nome LIKE '$firstname%$surname%'";
+            $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM `users` AS u WHERE u.Nome LIKE '$firstname%$surname%'";
         }
-        $query = "SELECT u.Tipo, u.Nome, u.Centro_saude FROM `users` AS u WHERE u.Nome = '$firstname'";
+        $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM `users` AS u WHERE u.Nome = '$firstname'";
     }
     else{
         if(isset($_GET['surname'])){
             $surname = $_GET['surname'];
             if(isset($_GET['username'])) {
                 $username = $_GET['username'];
-                $query = "SELECT u.Tipo, u.Nome, u.Centro_saude FROM `users` AS u WHERE u.Nome LIKE '%$surname%' AND u.username = '$username'";
+                $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM `users` AS u WHERE u.Nome LIKE '%$surname%' AND u.username = '$username'";
             }
-            $query = "SELECT u.Tipo, u.Nome, u.Centro_saude FROM `users` AS u WHERE u.Nome LIKE '%$surname%'";
+            $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM `users` AS u WHERE u.Nome LIKE '%$surname%'";
         }
         else{
             if(isset($_GET['username'])){
                 $username = $_GET['username'];
-                $query = "SELECT u.Tipo, u.Nome, u.Centro_saude FROM `users` AS u WHERE u.username LIKE '$username'";
+                $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM `users` AS u WHERE u.username LIKE '$username'";
             }
         }
     }
@@ -46,7 +46,7 @@
             <TR>
                 <TD> <?php echo $rows['Tipo']; ?> </TD>
                 <TD> <?php echo $rows['Nome']; ?> </TD>
-                <TD> <?php echo $rows['Centro_saude']; ?> </TD>
+                <TD> <?php echo $rows['Instituicao']; ?> </TD>
             </TR>
             <?php } ?>
         </table>

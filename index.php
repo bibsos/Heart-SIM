@@ -117,7 +117,7 @@
                 case "listUsers":
                     $links = "listUsers.php";
                     break;
-                case "verifyUpdate":
+                case "verifyUpdateProfile":
                     $links = "verifyUpdateProfile.php";
                     break;
             }

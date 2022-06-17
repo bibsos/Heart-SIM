@@ -17,7 +17,7 @@
         <p>Username: <input type="username" name="username"> </p>
         <p>Password: <input type="password" name="password"> </p>
         <p>Fotografia: <input type="file" name="foto"> </p>
-        <p>Centro de saúde: <input type="text" name="centro_saude"> </p>
+        <p>Instituição: <input type="text" name="instituicao"> </p>
         <p> <input type="submit" name="submit" value="Adicionar Utilizador"></p>
     </form>
 </div>

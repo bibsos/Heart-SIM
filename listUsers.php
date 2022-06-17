@@ -1,7 +1,7 @@
 <?php
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
-    $query = "SELECT u.Tipo, u.Nome FROM users AS u";
+    $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM users AS u";
     $result = mysqli_query($connect, $query);
 ?>
 
@@ -51,7 +51,7 @@
         <TR>
             <TD> <?php echo $rows['Tipo']; ?> </TD>
             <TD> <?php echo $rows['Nome']; ?> </TD>
-            <TD> <?php echo $rows['Centro_saude'];?> </TD>
+            <TD> <?php echo $rows['Instituicao']; ?> </TD>
         </TR>
         <?php } ?>
     </table>

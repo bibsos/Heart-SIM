@@ -3,14 +3,14 @@
     or die('Error connecting to the server: ' . mysqli_error($connect));
     $id = $_SESSION['ID'];
     //$id = "2";
-    $query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id'";
+    $query_centro = "SELECT users.Instituicao FROM users WHERE users.ID = '$id'";
     $centro_saude = mysqli_query($connect, $query_centro);
     $nome_centro_user = mysqli_fetch_array($centro_saude)[0];
     echo $nome_centro_user;
     echo $id;
     $query = "SELECT p.Nome AS 'Paciente', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p 
             LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
-            WHERE p.Centro_saude = '$nome_centro_user'";
+            WHERE p.Instituicao = '$nome_centro_user'";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
     echo count($result);
 ?>

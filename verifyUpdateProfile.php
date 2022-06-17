@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $fotografia = $_POST['foto'];
-    $centro_saude = $_POST['centro_saude'];
+    $instituicao = $_POST['instituicao'];
 
     if(empty($tipo)){
         $tipo=$row['Tipo'];
@@ -39,10 +39,10 @@ if(isset($_POST['submit'])) {
     if(empty($fotografia)){
         $fotografia=$row['Fotografia'];
     }
-    if(empty($centro_saude)){
-        $centro_saude=$row['Centro_saude'];
+    if(empty($instituicao)){
+        $instituicao=$row['Instituicao'];
     }
-    $update = "UPDATE `users` AS u SET u.ID=$ID,u.Tipo=$tipo,u.Nome=$nome,u.Morada=$morada,u.Contacto=$contacto,u.username=$username,u.password=$password,u.Fotografia=$fotografia,u.Centro_saude=$centro_saude WHERE u.ID=$ID ";
+    $update = "UPDATE `users` AS u SET u.ID=$ID,u.Tipo=$tipo,u.Nome=$nome,u.Morada=$morada,u.Contacto=$contacto,u.username=$username,u.password=$password,u.Fotografia=$fotografia,u.Instituicao=$instituicao WHERE u.ID=$ID ";
     $confirmation = "SELECT `Contacto` FROM users where $contacto = `Contacto`";
     $confirm_query = mysqli_query($connect, $confirmation);
     if (mysqli_num_rows($confirm_query) == 0){

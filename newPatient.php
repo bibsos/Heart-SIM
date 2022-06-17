@@ -3,7 +3,7 @@ $connect = mysqli_connect('localhost', 'root', '','heartsim')
 or die('Error connecting to the server: ' . mysqli_error($connect));
 $id2 = $_SESSION['ID'];
 echo $id2;
-$query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id2'";
+$query_centro = "SELECT users.Instituicao FROM users WHERE users.ID = '$id2'";
 $result_centro = mysqli_query($connect, $query_centro);
 $centro_saude = mysqli_fetch_array($result_centro)[0];
 echo $centro_saude;

@@ -2,12 +2,12 @@
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
         or die('Error connecting to the server: ' . mysqli_error($connect));
     $id = $_SESSION['ID'];
-    $query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id'";
+    $query_centro = "SELECT users.Instituicao FROM users WHERE users.ID = '$id'";
     $result_centro = mysqli_query($connect, $query_centro);
     $centro_saude = mysqli_fetch_array($result_centro)[0];
     $query = "SELECT p.Nome AS 'Paciente', p.Contacto AS 'Contacto', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p 
         LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
-        WHERE p.Centro_saude = '$centro_saude' ";
+        WHERE p.Instituicao = '$centro_saude' ";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
 <div class="w3-row-padding w3-padding-64 w3-container">
