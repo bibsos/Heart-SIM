@@ -4,7 +4,7 @@
     or die('Error connecting to the server: ' . mysqli_error($connect));
     if(isset($_POST['submit'])) {
         //$id_paciente = $_POST['paciente'];
-        $id_paciente = 11;
+        $id_paciente = 17;
         echo $id_paciente;
         $nyha = $_POST['nyha'];
         $angor = $_POST['angor'];
@@ -17,7 +17,7 @@
         $hemoglobina = $_POST['hemoglobina'];
         $ejecao_ve = $_POST['ejecao_ve'];
         //$id = $_SESSION['ID'];
-        $id = 2;
+        $id = 7;
         $class=0;
 
 // Terminal Node 1

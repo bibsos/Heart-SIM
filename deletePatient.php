@@ -7,7 +7,7 @@
     $centro_saude = mysqli_fetch_array($result_centro)[0];
     $query = "SELECT p.Nome AS 'Paciente', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p 
            LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
-           WHERE p.Instituicao = '$centro_saude'";
+           WHERE p.Centro_saude = '$centro_saude'";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
 <div class="w3-row-padding w3-padding-64 w3-container">

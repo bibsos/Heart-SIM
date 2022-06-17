@@ -10,7 +10,7 @@
     echo $id;
     $query = "SELECT p.Nome AS 'Paciente', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p 
             LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
-            WHERE p.Instituicao = '$nome_centro_user'";
+            WHERE p.Centro_saude = '$nome_centro_user'";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
     echo count($result);
 ?>

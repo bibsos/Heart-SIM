@@ -117,9 +117,6 @@
                 case "listUsers":
                     $links = "listUsers.php";
                     break;
-                case "verifyUpdateProfile":
-                    $links = "verifyUpdateProfile.php";
-                    break;
             }
             include ($links);
             ?>
