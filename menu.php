@@ -15,7 +15,7 @@
             <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
                 <a href="index.php?action=homepage" class="w3-bar-item w3-button w3-padding-large w3-white">Início</a>
-                <a href="showlogin.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"> Iniciar Sessão </a>
+                <a href="index.php?action=showlogin" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"> Iniciar Sessão </a>
             </div>
 
         <!-- Navbar on small screens -->

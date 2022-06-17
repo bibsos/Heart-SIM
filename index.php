@@ -6,6 +6,7 @@
         switch($action) {
             case "showlogin":
                 session_unset();
+                include("showlogin.php");
                 break;
             case "verifylogin":
                 $user = $_POST['user'];
@@ -14,24 +15,34 @@
                     or die('Error connecting to the server: ' . mysqli_error($connect));
                 $sql = "SELECT * FROM `users` WHERE USERNAME = '$user'";
                 $result = mysqli_query($connect, $sql) or die('The query failed: '.mysqli_error($connect));
-                $password_decode = false;
+                //$password_decode = false;
                 $row = mysqli_fetch_assoc($result);
+                echo mysqli_num_rows($result);
                 if(mysqli_num_rows($result) == 1){
                     $pass_login = $row['password'];
-                    $password_decode = password_verify($password, $pass_login);
+                    //$password_decode = password_verify($password, $pass_login);
+                    //if(!$password_decode){
+                    //    echo "A password não corresponde!";
+                    //}
                 }
-                if($password_decode){
-                       $_SESSION['authuser'] = 1;
-                       $islogin = true;
-                       $_SESSION['username'] = $_POST['user'];
-                       $_SESSION['utilizador'] = $row['Tipo'];
-                       $_SESSION['ID'] = $row["ID"];
+                $_SESSION['authuser'] = 1;
+                $islogin = true;
+                $_SESSION['username'] = $_POST['user'];
+                $_SESSION['utilizador'] = $row['Tipo'];
+                $_SESSION['ID'] = $row["ID"];
+                //if($password_decode){
+                      // $_SESSION['authuser'] = 1;
+                       //$islogin = true;
+                       //$_SESSION['username'] = $_POST['user'];
+                       //$_SESSION['utilizador'] = $row['Tipo'];
+                       //$_SESSION['ID'] = $row["ID"];
 
                     //$_SESSION['centro'] = $row["Centro_saude"];
-                }
-                   else {
-                       $_SESSION['authuser'] = 0;
-                   }
+                //}
+                  // else {
+                  //     $_SESSION['authuser'] = 0;
+                  // }
+                include("verifylogin.php");
                 break;
             case "logout":
                 session_unset();
