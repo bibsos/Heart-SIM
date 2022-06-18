@@ -13,35 +13,23 @@
                 $password = $_POST['pass'];
                 $connect = mysqli_connect('localhost', 'root', '','heartsim')
                     or die('Error connecting to the server: ' . mysqli_error($connect));
-                $sql = "SELECT * FROM `users` WHERE USERNAME = '$user'";
+                $sql = "SELECT * FROM `users` WHERE username = '$user'";
                 $result = mysqli_query($connect, $sql) or die('The query failed: '.mysqli_error($connect));
-                //$password_decode = false;
-                $row = mysqli_fetch_assoc($result);
-                echo mysqli_num_rows($result);
-                if(mysqli_num_rows($result) == 1){
-                    $pass_login = $row['password'];
-                    //$password_decode = password_verify($password, $pass_login);
-                    //if(!$password_decode){
-                    //    echo "A password não corresponde!";
-                    //}
-                }
-                $_SESSION['authuser'] = 1;
-                $islogin = true;
-                $_SESSION['username'] = $_POST['user'];
-                $_SESSION['utilizador'] = $row['Tipo'];
-                $_SESSION['ID'] = $row["ID"];
-                //if($password_decode){
-                      // $_SESSION['authuser'] = 1;
-                       //$islogin = true;
-                       //$_SESSION['username'] = $_POST['user'];
-                       //$_SESSION['utilizador'] = $row['Tipo'];
-                       //$_SESSION['ID'] = $row["ID"];
-
-                    //$_SESSION['centro'] = $row["Centro_saude"];
+                $row = mysqli_fetch_array($result);
+                //$sql = "SELECT * FROM `users` WHERE USERNAME = '$user' AND PASSWORD = hash('sha256', $password)";
+                //$result = mysqli_query($connect, $sql) or die('The query failed: '.mysqli_error($connect));
+                //$row = mysqli_fetch_array($result);
+                //if(mysqli_num_rows($result) == 1){
+                    $_SESSION['authuser'] = 1;
+                    $islogin = true;
+                    $_SESSION['username'] = $_POST['user'];
+                    $_SESSION['utilizador'] = $row['Tipo'];
+                    $_SESSION['ID'] = $row["ID"];
+                    $_SESSION['centro'] = $row["Centro_saude"];
                 //}
-                  // else {
-                  //     $_SESSION['authuser'] = 0;
-                  // }
+                //else {
+                //     $_SESSION['authuser'] = 0;
+                //}
                 include("homepage.php");
                 break;
             case "logout":
@@ -125,6 +113,9 @@
                     break;
                 case "verifyAddPatient":
                     $links="verifyAddPatient.php";
+                    break;
+                case "statistic":
+                    $links = "statistic.php";
                     break;
                 default:
                     $links="error";
