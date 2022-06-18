@@ -28,7 +28,7 @@
                     $_SESSION['centro'] = $row["Centro_saude"];
                 //}
                 //else {
-                //     $_SESSION['authuser'] = 0;
+                // /    $_SESSION['authuser'] = 0;
                 //}
                 include("homepage.php");
                 break;
