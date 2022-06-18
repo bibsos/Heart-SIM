@@ -12,7 +12,7 @@
 <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
     <h1> Pacientes </h1>
 </div>
-<div>
+<div class="w3-margin">
     <table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center">
         <thead>
         <TR class="w3-light-grey">

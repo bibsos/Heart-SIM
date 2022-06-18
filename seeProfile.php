@@ -1,33 +1,35 @@
 <?php
-    $connect = mysqli_connect('localhost', 'root', '','heartsim')
-        or die('Error connecting to the server: ' . mysqli_error($connect));
+$connect = mysqli_connect('localhost', 'root', '','heartsim')
+or die('Error connecting to the server: ' . mysqli_error($connect));
 
-    $query = "";
-    if(isset($_GET['submit'])){
-    if(isset($_GET['username'])){
-        $username = $_GET['username'];
+$query = "";
+if(isset($_POST['submit_profile'])){
+    if(isset($_POST['username'])){
+        $username = $_POST['username'];
         $query = "SELECT u.Tipo, u.Nome, u.Morada, u.Contacto, u.Fotografia, u.username FROM users AS u 
-        WHERE u.username = '$username'";
+                WHERE u.username = '$username'";
     }
-    $row = mysqli_query($connect, $query);
-    echo $row[0];
-    if(mysqli_num_rows($row) != 1) {
-        die("Esse utilizador não existe!");
+    $result = mysqli_query($connect, $query);
+    if(mysqli_num_rows($result) != 1) {
+        mysqli_error("Esse utilizador não existe!");
     }
+    else{
+        $user = mysqli_fetch_array($result);
+        ?>
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <h1>  Perfil de <?php echo $user[1]?> </h1>
+            <table >
+                <tr> <td> Tipo: <?php echo $user[0]; ?> </td></tr>
+                <tr> <td> Nome: <?php echo $user[1]; ?> </td> </tr>
+                <tr> <td> Morada: <?php echo $user[2]; ?> </td> </tr>
+                <tr> <td> Contacto: <?php echo $user[3]; ?> </td></tr>
+                <tr> <td> Fotografia: <?php echo $user[4]; ?> </td> </tr>
+                <tr> <td> Username:  <?php echo $user[5]; ?> </td></tr>
+                <tr> <td> <form action="index.php?action=updateProfile"> <input type="submit" name="submit" value="Editar"> </form> </td> </tr>
+            </table>
+        </div>
+        <?php
+    }
+}
 ?>
-<div class="w3-row-padding w3-padding-64 w3-container">
-    <h1>  Perfil de <?php $row[1]?> </h1>
-    <table >
-        <tr> <td> Tipo: <?php echo $row[0]; ?> </td></tr>
-        <tr> <td> Nome: <?php echo $row[1]; ?> </td> </tr>
-        <tr> <td> Morada: <?php echo $row[2]; ?> </td> </tr>
-        <tr> <td> Contacto: <?php echo $row[3]; ?> </td></tr>
-        <tr> <td> Fotografia: <?php echo $row[4]; ?> </td> </tr>
-        <tr> <td> Username:  <?php echo $row[5]; ?> </td></tr>
-        <td> <form action="index.php?action=updateProfile"> <input type="submit" name="submit" value="Editar"> </form>  </td>
-    </table>
-
-</div>
-<?php
-    }
-    ?>
+<form action="index.php?action=listUsers"> <input type="submit" name="submit" value="Voltar"> </form>

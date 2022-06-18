@@ -1,46 +1,51 @@
 <?php
-    $connect = mysqli_connect('localhost', 'root', '','heartsim')
-    or die('Error connecting to the server: ' . mysqli_error($connect));
-    $query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM users AS u";
-    $result = mysqli_query($connect, $query);
+$connect = mysqli_connect('localhost', 'root', '','heartsim')
+or die('Error connecting to the server: ' . mysqli_error($connect));
+$query = "SELECT u.Tipo, u.Nome, u.Instituicao FROM users AS u";
+$result = mysqli_query($connect, $query);
 ?>
 
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
     <h1>  Utilizadores </h1>
-<table border="1">
-    <tr>
-        <td> <a href="index.php?action=adicionarUtilizador"> Adicionar Utilizador </a> </td>
-        <td> <a href="index.php?action=apagarPaciente"> Apagar Utilizador </a> </td>
-    </tr>
-</table> <br>
+</div>
+
+<div class="w3-margin">
+    <a>
+        <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=adicionarUtilizador"> Adicionar Utilizador </a>
+        <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=apagarUtilizador"> Apagar Utilizador </a>
+    </a>
+
+    <form method="POST" action="index.php?action=seeProfile">
+        <h3 class="w3-light-gray"> Ver perfil: </h3>
+        <table class="w3-table">
+            <tr>
+                <td> Username: <input class="w3-input" type="text" id="username" name="username"></td>
+            </tr>
+            <tr>
+                <td style=" font-size: large"> <input type="submit" id="submit_profile" name="submit_profile" value="Procurar" class="w3-teal w3-button"></td>
+            </tr>
+        </table>
+    </form>
 
 <form method="GET" action="searchUser.php">
-    <h3> Procurar por: </h3>
-    <table>
+    <h3 class="w3-light-gray"> Procurar por: </h3>
+    <table class="w3-table">
         <tr>
-            <td> Primeiro Nome: <input type="text" id="firstname" name="firstname"> </td>
-            <td> Apelido: <input type="text" id="surname" name="surname"></td>
-            <td> Username: <input type="text" id="username" name="username"></td>
+            <td> Primeiro Nome: <input class="w3-input" type="text" id="firstname" name="firstname"> </td>
+            <td> Apelido: <input class="w3-input" type="text" id="surname" name="surname"></td>
+            <td> Username: <input class="w3-input" type="text" id="username" name="username"></td>
         </tr>
         <tr>
-            <td> <input type="submit" id="submit_search" name="submit_search" value="Procurar"></td>
-        </tr>
-    </table>
-</form>
-<form method="GET" action="seeProfile.php">
-    <h3> Ver perfil: </h3>
-    <table>
-        <tr>
-            <td> Username: <input type="text" id="username" name="username"></td>
-        </tr>
-        <tr>
-            <td> <input type="submit" id="submit" name="submit" value="Procurar"></td>
+            <td style=" font-size: large"> <input type="submit" id="submit_search" name="submit_search" value="Procurar" class="w3-teal w3-button"></td>
         </tr>
     </table>
 </form>
-<div>
-    <table border="1">
-        <TR>
+
+</div>
+
+<div class="w3-padding w3-container">
+    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center w3-large">
+        <TR class="w3-light-grey">
             <TH> Tipo </TH>
             <TH> Nome </TH>
             <TH> Instituição </TH>
@@ -56,5 +61,6 @@
         <?php } ?>
     </table>
 </div>
+
 
 

@@ -15,29 +15,33 @@
     echo count($result);
 ?>
 
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
     <h1>  Nova Consulta </h1>
+</div>
+
+<div class="w3-padding w3-container">
 <form method = "POST" action="verifyAddEvent.php">
-    <label for = "paciente"> Selecione o paciente: </label>
-    <select name="paciente" id="paciente">
+    <p><label for = "paciente" style=" font-size: large"> <b> Selecione o paciente: </b> </label> </p>
+    <select class="w3-select" name="paciente" id="paciente">
+        <option value="" disabled selected> Escolha o paciente </option>
         <?php while($rows = mysqli_fetch_array($result)){
             $nome_paciente = $rows[0];
             $cartao_saude_paciente = $rows[1];
             $id_paciente = intval($rows[2]);
         ?>
-        <option value="<?php $id_paciente ?>"> <?php echo $nome_paciente.",".$cartao_saude_paciente;  ?> </option>
+        <option  value="<?php $id_paciente ?>"> <?php echo $nome_paciente.",".$cartao_saude_paciente;  ?> </option>
         <?php } ?>
     </select>
-    <p>NYHA <input type="number" name="nyha"</p>
-    <p>Angor: <input type="number" name="angor"> </p>
-    <p>Sincope <input type="number" name="sincope"></p>
-    <p>Dispneia <input type="number" name="dispneia"</p>
-    <p>Pressão Arterial: <input type="number" name="pressao_arterial"> </p>
-    <p>Edema Periférico: <input type="number" name="edema_periferico"</p>
-    <p>Crepitações: <input type="number" name="crepitacoes"</p>
-    <p>Creatinina: <input type="number" name="creatinina"> </p>
-    <p>Hemoglobina: <input type="number" name="hemoglobina"> </p>
-    <p>Ejeção VE: <input type="number" name="ejecao_ve"> </p>
-    <p> <input type="submit" name="submit" value="Criar Consulta"></p>
+    <p style=" font-size: large"> <b> NYHA: </b> <input class="w3-input"  type="number" name="nyha"</p>
+    <p style=" font-size: large"> <b> Angor: </b> <input class="w3-input"  type="number" name="angor"> </p>
+    <p style=" font-size: large"> <b> Sincope: </b> <input class="w3-input"  type="number" name="sincope"></p>
+    <p style=" font-size: large"> <b> Dispneia: </b> <input class="w3-input"  type="number" name="dispneia"</p>
+    <p style=" font-size: large"> <b> Pressão Arterial: </b> <input class="w3-input"  type="number" name="pressao_arterial"> </p>
+    <p style=" font-size: large"> <b> Edema Periférico: </b> <input class="w3-input"  type="number" name="edema_periferico"</p>
+    <p style=" font-size: large"> <b> Crepitações: </b> <input class="w3-input"  type="number" name="crepitacoes"</p>
+    <p style=" font-size: large"> <b> Creatinina: </b> <input class="w3-input"  type="number" name="creatinina"> </p>
+    <p style=" font-size: large"> <b> Hemoglobina: </b> <input class="w3-input"  type="number" name="hemoglobina"> </p>
+    <p style=" font-size: large"> <b> Ejeção VE: </b> <input class="w3-input"  type="number" name="ejecao_ve"> </p>
+    <p style=" font-size: large"> <input type="submit" name="submit" value="Criar Consulta" class="w3-teal w3-button"></p>
 </form>
 </div>

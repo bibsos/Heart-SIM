@@ -16,7 +16,7 @@
     <h1> Registo de consultas </h1>
 </div>
 
-<div class="w3-row-padding w3-margin" >
+<div class="w3-margin" >
 <!-- <table >
     <tr>
         <td class="w3-button w3-bar-item w3-light-grey"> <a href="index.php?action=novoPaciente"> Adicionar Paciente </a> </td>
@@ -25,9 +25,9 @@
     </tr>
 </table> -->
    <a>
-            <a class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novoPaciente"> Adicionar Paciente </a>
-            <a class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novaConsulta"> Adicionar Consulta </a>
-            <a class="w3-button w3-bar-item w3-light-grey" href="index.php?action=apagarPaciente"> Apagar Paciente </a>
+            <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novoPaciente"> Adicionar Paciente </a>
+            <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novaConsulta"> Adicionar Consulta </a>
+            <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=apagarPaciente"> Apagar Paciente </a>
    </a>
 </div>
 

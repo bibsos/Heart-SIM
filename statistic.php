@@ -1,5 +1,8 @@
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
     <h1> Estatística </h1>
+    <p> Relativa a dados dos pacientes</p>
+</div>
+
 <?php
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
         or die('Error connecting to the server: ' . mysqli_error($connect));
@@ -61,6 +64,8 @@
     $num_90_99 = mysqli_num_rows($result_90_99);
 
 ?>
+
+<div class="w3-padding w3-container">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
 <canvas id="Classificacao" style="width:150%;max-width:700px"></canvas>
 
@@ -91,7 +96,8 @@
     });
 </script>
 <br>
-    <canvas id="Sexo" style="width:150%;max-width:700px"></canvas>
+
+   <p> <canvas id="Sexo" style="width:150%;max-width:700px"></canvas> </p>
 <script>
     var xValues_sexo = ["Feminino", "Masculino"];
     var yValues_sexo = [<?php echo $num_fem.','.$num_mas?>];
@@ -118,7 +124,7 @@
 
 </script>
 
-    <canvas id="Idade" style="width:150%;max-width:700px"></canvas>
+    <p> <canvas id="Idade" style="width:150%;max-width:700px"></canvas> </p>
 
     <script>
         var xValues_idade = ["0-10", "11-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90", "91-100"];
@@ -153,3 +159,4 @@
         });
     </script>
  <br>
+</div>
