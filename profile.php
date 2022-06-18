@@ -7,8 +7,10 @@
     $row = mysqli_fetch_array($result);
 
 ?>
-<div class="w3-row-padding w3-padding-64 w3-container">
+
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
     <h1>  Perfil </h1>
+</div>
 <!--<table >
     <tr> <td> Nome: <?php echo $row['Nome']; ?> </td> </tr>
     <tr> <td> Morada: <?php echo $row['Morada']; ?> </td> </tr>
@@ -18,13 +20,15 @@
     <td> <form action="updateProfile.php"> <input type="submit" name="submit" value="Editar"> </form>  </td>
 </table>-->
 
+<div class="w3-padding w3-margin">
     <table >
         <tr> <td> Nome: <?php echo $row[0]; ?> </td> </tr>
         <tr> <td> Morada: <?php echo $row[1]; ?> </td> </tr>
         <tr> <td> Contacto: <?php echo $row[2]; ?> </td></tr>
         <tr> <td> Fotografia: <?php echo $row[3]; ?> </td> </tr>
         <tr> <td> Username:  <?php echo $row[4]; ?> </td></tr>
-        <td> <form action="updateProfile.php"> <input type="submit" name="submit" value="Editar"> </form>  </td>
+        <!--<td class="w3-button"> <form action="updateProfile.php"> <button class="w3-btn w3-teal" type="submit" name="submit" value="Editar">Editar</button> </form>  </td>-->
+        <td class=" "> <form action="updateProfile.php"> <input type="submit" name="submit" value="Editar" class="w3-teal w3-button"> </form>  </td>
     </table>
 
 </div>

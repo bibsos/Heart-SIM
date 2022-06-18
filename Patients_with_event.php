@@ -9,26 +9,32 @@
 
     $result = mysqli_query($connect, $query);
 ?>
-    <table border="1">
-        <TR>
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
+    <h1> Pacientes </h1>
+</div>
+<div>
+    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center">
+        <thead>
+        <TR class="w3-light-grey">
             <TH> Nome </TH>
             <TH> Contacto </TH>
             <TH> Cartão de Saúde </TH>
             <TH> Classificação </TH>
             <TH> Data da Consulta </TH>
         </TR>
+        </thead>
 <?php
     while($row = mysqli_fetch_array($result)){
     $current_date = date("Y-m-d");
     $difference = date_diff($current_date, $row[4]);
 ?>
         <TR>
-            <TD> <?php echo $row[0]; ?> </TD>
-            <TD> <?php echo $row[1]; ?> </TD>
-            <TD> <?php echo $row[2]; ?> </TD>
-            <TD> <?php echo $row[3]; ?> </TD>
-            <TD> <?php echo $row[4]."(".$difference.")"; ?> </TD>
+            <TD class="w3-text-black"> <?php echo $row[0]; ?> </TD>
+            <TD class="w3-text-black"> <?php echo $row[1]; ?> </TD>
+            <TD class="w3-text-black"> <?php echo $row[2]; ?> </TD>
+            <TD class="w3-text-black"> <?php echo $row[3]; ?> </TD>
+            <TD class="w3-text-black"> <?php echo $row[4]."(".$difference.")"; ?> </TD>
         </TR>
     <?php } ?>
 </table>
-
+</div>

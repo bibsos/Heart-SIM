@@ -12,17 +12,29 @@
         WHERE p.Centro_saude = '$centro_saude' ";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
     <h1> Registo de consultas </h1>
-<table border="1">
+</div>
+
+<div class="w3-row-padding w3-margin" >
+<!-- <table >
     <tr>
-        <td> <a href="index.php?action=novoPaciente"> Adicionar Paciente </a> </td>
-        <td> <a href="index.php?action=novaConsulta"> Adicionar Consulta </a> </td>
-        <td> <a href="index.php?action=apagarPaciente"> Apagar Paciente </a> </td>
+        <td class="w3-button w3-bar-item w3-light-grey"> <a href="index.php?action=novoPaciente"> Adicionar Paciente </a> </td>
+        <td class="w3-button w3-bar-item w3-light-grey"> <a href="index.php?action=novaConsulta"> Adicionar Consulta </a> </td>
+        <td class="w3-button w3-bar-item w3-light-grey"> <a href="index.php?action=apagarPaciente"> Apagar Paciente </a> </td>
     </tr>
-</table>
-<table border="1">
-    <TR>
+</table> -->
+   <a>
+            <a class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novoPaciente"> Adicionar Paciente </a>
+            <a class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novaConsulta"> Adicionar Consulta </a>
+            <a class="w3-button w3-bar-item w3-light-grey" href="index.php?action=apagarPaciente"> Apagar Paciente </a>
+   </a>
+</div>
+
+<div class="w3-row-padding w3-margin" >
+
+<table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center w3-large">
+    <TR class="w3-light-grey">
         <TH> Nome </TH>
         <TH> Contacto </TH>
         <TH> Cartão de Saúde </TH>
@@ -31,9 +43,9 @@
         while($rows = mysqli_fetch_array($result)){
            ?>
     <TR>
-        <TD> <?php echo $rows[0]; ?> </TD>
-        <TD> <?php echo $rows[1]; ?> </TD>
-        <TD> <?php echo $rows[2]; ?> </TD>
+        <TD class="w3-text-black"> <?php echo $rows[0]; ?> </TD>
+        <TD class="w3-text-black"> <?php echo $rows[1]; ?> </TD>
+        <TD class="w3-text-black"> <?php echo $rows[2]; ?> </TD>
     </TR>
     <?php } ?>
 </table>
