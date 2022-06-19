@@ -1,22 +1,15 @@
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
+    <h1> Novo paciente </h1>
+</div>
+
 <?php
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
-    or die('Error connecting to the server: ' . mysqli_error($connect));
-    //$id1 = $_SESSION['ID'];
-    //print '<pre>';
-    //var_dump($id1);
-    //print '</pre>';
-    //echo $id1;
+        or die('Error connecting to the server: ' . mysqli_error($connect));
 
     if(isset($_POST['submit'])) {
-        $id3 = $_POST['id'];
-        //echo $id3;
-        //$query_centro = "SELECT users.Centro_saude FROM users WHERE users.ID = '$id3'";
-        //$result_centro = mysqli_query($connect, $query_centro);
-        //$centro_saude = mysqli_fetch_array($result_centro)[0];
-        //$id = "2";
+        $id_user = $_SESSION['ID'];
+        $centro_saude = $_SESSION['instituicao'];
         $centro_saude=$_POST['centro'];
-        echo $centro_saude;
-        //$centro_saude = "Charneca de Caparica";
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
         $sexo = $_POST['Sexo'];
@@ -59,5 +52,6 @@
     }
     }
 ?>
+<br>
 <form type="POST" action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
 

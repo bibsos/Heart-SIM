@@ -3,6 +3,7 @@
 </div>
 
 <?php
+
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
     $ID = $_SESSION['ID'];
@@ -26,7 +27,7 @@ if(isset($_POST['submit'])) {
     $password = $_POST['password'];
     $fotografia = $_POST['foto'];
     $instituicao = $_POST['instituicao'];
-    echo $instituicao;
+
     if(empty($tipo)){
         $tipo=$row['Tipo'];
     }
@@ -51,6 +52,7 @@ if(isset($_POST['submit'])) {
     if(empty($instituicao)){
         $instituicao=$row['Instituicao'];
     }
+    echo $ID;
     $update = "UPDATE `users` AS u SET u.Tipo=$tipo,u.Nome=$nome,u.Morada=$morada,u.Contacto=$contacto,u.username=$username,u.password=$password,u.Fotografia=$fotografia,u.Instituicao=$instituicao WHERE u.ID='$ID' ";
     $confirmation = "SELECT `Contacto` FROM users where $contacto = `Contacto`";
     $confirm_query = mysqli_query($connect, $confirmation);

@@ -28,7 +28,9 @@
         <tr style=" font-size: large"> <td> <b> Fotografia: </b> <?php echo $row[3]; ?> </td> </tr>
         <tr style=" font-size: large"> <td> <b> Username: </b>  <?php echo $row[4]; ?> </td></tr>
         <!--<td class="w3-button"> <form action="updateProfile.php"> <button class="w3-btn w3-teal" type="submit" name="submit" value="Editar">Editar</button> </form>  </td>-->
-        <td> <form action="updateProfile.php"> <input style=" font-size: large" type="submit" name="submit" value="Editar" class="w3-teal w3-button"> </form>  </td>
+        <tr><td> <form method="POST" action="index.php?action=atualizar_Perfil">
+                    <input style=" font-size: large" type="submit" name="submit" value="Editar" class="w3-teal w3-button">
+                </form>  </td> </tr>
     </table>
 
 </div>

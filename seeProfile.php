@@ -1,8 +1,8 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '','heartsim')
-or die('Error connecting to the server: ' . mysqli_error($connect));
-
-$query = "";
+    $connect = mysqli_connect('localhost', 'root', '','heartsim')
+    or die('Error connecting to the server: ' . mysqli_error($connect));
+    $utilizador = $_SESSION['utilizador'];
+    $query = "";
 if(isset($_POST['submit_profile'])){
     if(isset($_POST['username'])){
         $username = $_POST['username'];
@@ -25,8 +25,10 @@ if(isset($_POST['submit_profile'])){
                 <tr> <td> Contacto: <?php echo $user[3]; ?> </td></tr>
                 <tr> <td> Fotografia: <?php echo $user[4]; ?> </td> </tr>
                 <tr> <td> Username:  <?php echo $user[5]; ?> </td></tr>
-                <tr> <td> <form action="index.php?action=updateProfile"> <input type="submit" name="submit" value="Editar"> </form> </td> </tr>
             </table>
+            <form method="POST" action="index.php?action=atualizar_Perfil">
+                <input type="hidden" name="utilizador" value="<?php echo $utilizador ?>">
+                <input type="submit" name="submit" value="Editar"> </form>
         </div>
         <?php
     }

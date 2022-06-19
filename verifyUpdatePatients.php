@@ -1,3 +1,6 @@
+<div class="w3-teal w3-row-padding w3-padding-64 w3-container">
+    <h1>  Apagar paciente </h1>
+</div>
 <?php
 
 $connect = mysqli_connect('localhost', 'root', '','heartsim')
@@ -77,3 +80,5 @@ if(isset($_POST['submit'])) {
     }
 }
 ?>
+
+<form type="POST" action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>

@@ -89,9 +89,6 @@ if(isset($_GET["action"])){
         case "adicionarUtilizador":
             $links = "addUser.php";
             break;
-        case "updateProfile":
-            $links = "updateProfile.php";
-            break;
         case "apagarPaciente":
             $links = "deletePatient.php";
             break;
@@ -121,6 +118,21 @@ if(isset($_GET["action"])){
             break;
         case "verifyUpdateProfile":
             $links = "verifyUpdateProfile.php";
+            break;
+        case "atualizar_Perfil":
+            $links = "updateProfile.php";
+            break;
+        case "procurarUtilizador":
+            $links = "searchUser.php";
+            break;
+        case "listaEspera":
+            $links = "waiting_list.php";
+            break;
+        case "atenderPaciente":
+            $links = "seePatient.php";
+            break;
+        case "verifySeePatient":
+            $links = "verifySeePatient.php";
             break;
         default:
             $links="homepage.php";

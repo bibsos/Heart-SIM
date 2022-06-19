@@ -1,12 +1,6 @@
 <?php
 $connect = mysqli_connect('localhost', 'root', '','heartsim')
 or die('Error connecting to the server: ' . mysqli_error($connect));
-$id2 = $_SESSION['ID'];
-echo $id2;
-$query_centro = "SELECT users.Instituicao FROM users WHERE users.ID = '$id2'";
-$result_centro = mysqli_query($connect, $query_centro);
-$centro_saude = mysqli_fetch_array($result_centro)[0];
-echo $centro_saude;
 ?>
 
 <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
@@ -35,8 +29,6 @@ echo $centro_saude;
     <input type="file"  accept="image/*" id="foto" name="foto"> </p>
     <p style=" font-size: large"> <b> Alergias: </b> <input class="w3-input" type="text" name="alergias"> </p>
     <p style=" font-size: large"> <b> NIF: </b> <input class="w3-input" type="number" name="nif"> </p>
-    <input type="hidden" name="id" value="<?php echo $id2 ?>">
-    <input type="hidden" name="centro" value="<?php echo $centro_saude ?>">
     <p style=" font-size: large"> <input type="submit" name="submit" value="Adicionar Paciente" class="w3-teal w3-button"></p>
 </form>
 </div>
