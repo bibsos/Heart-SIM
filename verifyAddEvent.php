@@ -111,7 +111,7 @@
     }
 ?>
 <div>
-    <form method="POST">
+    <form method="POST" action="index.php?action=insertEvent">
     <table>
         <tr>
             <td> Classificação sugerida </td>
@@ -125,29 +125,20 @@
             <td colspan="2"> <input type="submit" name="submit_confirmar" value="Confirmar classificação"> </td>
         </tr>
     </table>
+        <input type="hidden" name="id_paciente" value="<?php echo $id_paciente ?>">
+        <input type="hidden" name="nyha" value="<?php echo $nyha ?>">
+        <input type="hidden" name="sincope" value="<?php echo $sincope ?>">
+        <input type="hidden" name="dispneia" value="<?php echo $dispneia ?>">
+        <input type="hidden" name="angor" value="<?php echo $angor ?>">
+        <input type="hidden" name="pa" value="<?php echo $pa ?>">
+        <input type="hidden" name="edema" value="<?php echo $edema ?>">
+        <input type="hidden" name="crepitacoes" value="<?php echo $crepitacoes ?>">
+        <input type="hidden" name="creatinina" value="<?php echo $creatinina ?>">
+        <input type="hidden" name="hemoglobina" value="<?php echo $hemoglobina ?>">
+        <input type="hidden" name="ejecao_ve" value="<?php echo $ejecao_ve ?>">
     </form>
-
 </div>
-
-<?php
-        if(isset($_POST['submit_confirmar'])){
-            echo("entrei");
-            ?>
-            <br>
-            <?php
-        $class_final = $_POST['class_final'];
-        $query = "INSERT INTO `episodio_clinico`(`ID_utilizador`, `ID_paciente`, `Classificacao`, `Data_consulta`, `Data_Atendimento`, `Relatorio`, `NYHA`, `Angor`, `Sincope`, `Dispneia`, `Pressao_arterial`, `Edema_periferico`, `Crepitacoes`, `Creatinina`, `Hemoglobina`, `Ejecao_VE`)
-            VALUES ('$ID','$id_paciente','$class_final',NULL,NULL,NULL,'$nyha','$angor','$sincope','$dispneia','$pa','$edema','$crepitacoes','$creatinina','$hemoglobina','$ejecao_ve')";
-        if (mysqli_query($connect, $query)) {
-                echo("Consulta adicionada!");
-            }
-        else {
-            echo "Erro a adicionar consulta:" . mysqli_error($connect);
-        }
-        }
-    }
-
-?>
+<?php } ?>
 <br>
 <form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
 

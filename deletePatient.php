@@ -30,11 +30,7 @@
     </form>
 </div>
 <div class="w3-padding w3-container">
-        <tr>
-        <td> <form method = "POST" action="index.php?action=registoConsulta"> <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Voltar"> </form></td>
-            <td><p><form method = "POST" action="index.php?action=verifyDeletePatient">
-                    <input type="hidden" name="id_paciente" value="<?php echo $_POST['id'] ?>">
-                    <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Apagar"></form> </p> </td>
-        </tr>
-    </table>
+    <form method = "POST" action="index.php?action=registoConsulta">
+        <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Voltar">
+    </form>
 </div>

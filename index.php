@@ -92,6 +92,18 @@ if(isset($_GET["action"])){
         case "apagarPaciente":
             $links = "deletePatient.php";
             break;
+        case "editarPaciente":
+            $links = "updatePatients.php";
+            break;
+        case "verifyDeletePatient":
+            $links = "verifyDeletePatient.php";
+            break;
+        case "verifyUpdatePatients":
+            $links = "verifyUpdatePatients.php";
+            break;
+        case "insertEvent":
+            $links = "insertEvent.php";
+            break;
         case "listUsers":
             $links = "listUsers.php";
             break;

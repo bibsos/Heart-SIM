@@ -67,96 +67,113 @@
 
 <div class="w3-padding w3-container">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
-<canvas id="Classificacao" style="width:150%;max-width:700px"></canvas>
+<table>
+    <TR>
+        <TD>
+            <canvas id="Classificacao" style="width:150%;max-width:700px"></canvas>
 
-<script>
-    var xValues_class = ["1", "2", "3", "4"];
-    var yValues_class = [<?php echo $result_class1.','.$result_class2.','.$result_class3.','.$result_class4?>];
-    var barColors_class = [
-        "#b91d47",
-        "#00aba9",
-        "#2b5797",
-        "#e8c3b9"
-    ];
-    new Chart("Classificacao", {
-        type: "pie",
-        data: {
-            labels: xValues_class,
-            datasets: [{
-                backgroundColor: barColors_class,
-                data: yValues_class
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "Classificação"
-            }
-        }
-    });
-</script>
-<br>
+            <script>
+                var xValues_class = ["1", "2", "3", "4"];
+                var yValues_class = [<?php echo $result_class1.','.$result_class2.','.$result_class3.','.$result_class4?>];
+                var barColors_class = [
+                    "#b91d47",
+                    "#00aba9",
+                    "#2b5797",
+                    "#e8c3b9"
+                ];
+                new Chart("Classificacao", {
+                    type: "pie",
+                    data: {
+                        labels: xValues_class,
+                        datasets: [{
+                            backgroundColor: barColors_class,
+                            data: yValues_class
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: "Classificação"
+                        }
+                    }
+                });
+            </script>
+            <br>
+        </TD>
+        <TD>
+            <p> <canvas id="Sexo" style="width:150%;max-width:700px"></canvas> </p>
+            <script>
+                var xValues_sexo = ["Feminino", "Masculino"];
+                var yValues_sexo = [<?php echo $num_fem.','.$num_mas?>];
+                var barColors_sexo = ["red", "green"];
 
-   <p> <canvas id="Sexo" style="width:150%;max-width:700px"></canvas> </p>
-<script>
-    var xValues_sexo = ["Feminino", "Masculino"];
-    var yValues_sexo = [<?php echo $num_fem.','.$num_mas?>];
-    var barColors_sexo = ["red", "green"];
-
-    new Chart("Sexo", {
-        type: "bar",
-        data: {
-            labels: xValues_sexo,
-            datasets: [{
-                backgroundColor: barColors_sexo,
-                data: yValues_sexo
-            }]
-        },
-        options: {
-            legend: {display: false},
-            title: {
-                display:true,
-                text: "Sexo"
-            }
-        }
-    });
+                new Chart("Sexo", {
+                    type: "bar",
+                    data: {
+                        labels: xValues_sexo,
+                        datasets: [{
+                            backgroundColor: barColors_sexo,
+                            data: yValues_sexo
+                        }]
+                    },
+                    options: {
+                        legend: {display: false},
+                        title: {
+                            display:true,
+                            text: "Sexo"
+                        }
+                    }
+                });
 
 
-</script>
+            </script>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            <p> <canvas id="Idade" style="width:150%;max-width:700px"></canvas> </p>
 
-    <p> <canvas id="Idade" style="width:150%;max-width:700px"></canvas> </p>
+            <script>
+                var xValues_idade = ["0-10", "11-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90", "91-100"];
+                var yValues_idade = [<?php echo $num_0_9.','.$num_10_19.','.$num_20_29.','.$num_30_39.','.$num_40_49.','.$num_50_59.','.$num_60_69.','.$num_70_79.','.$num_80_89.','.$num_90_99?>];
+                var barColors_idade = [
+                    "#b91d47",
+                    "#00aba9",
+                    "#2b5797",
+                    "#e8c3b9",
+                    "#862d2d",
+                    "#40ff00",
+                    "#ff8000",
+                    "#ffff00",
+                    "#990099",
+                    "#006600"
+                ];
+                new Chart("Idade", {
+                    type: "pie",
+                    data: {
+                        labels: xValues_idade,
+                        datasets: [{
+                            backgroundColor: barColors_idade,
+                            data: yValues_idade
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: "Idade"
+                        }
+                    }
+                });
+            </script>
+            <br>
+        </TD>
+        <TD>
 
-    <script>
-        var xValues_idade = ["0-10", "11-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90", "91-100"];
-        var yValues_idade = [<?php echo $num_0_9.','.$num_10_19.','.$num_20_29.','.$num_30_39.','.$num_40_49.','.$num_50_59.','.$num_60_69.','.$num_70_79.','.$num_80_89.','.$num_90_99?>];
-        var barColors_idade = [
-            "#b91d47",
-            "#00aba9",
-            "#2b5797",
-            "#e8c3b9",
-            "#862d2d",
-            "#40ff00",
-            "#ff8000",
-            "#ffff00",
-            "#990099",
-            "#006600"
-        ];
-        new Chart("Idade", {
-            type: "pie",
-            data: {
-                labels: xValues_idade,
-                datasets: [{
-                    backgroundColor: barColors_idade,
-                    data: yValues_idade
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: "Idade"
-                }
-            }
-        });
-    </script>
- <br>
+
+
+
+
+        </TD>
+    </TR>
+</table>
 </div>

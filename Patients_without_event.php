@@ -5,7 +5,7 @@
     $centro = $_SESSION['instituicao'];
     $query = "SELECT p.Nome AS 'Paciente', p.Contacto AS 'Contacto', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p 
         LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
-        WHERE p.Centro_saude = '$centro' ";
+        WHERE p.Centro_saude = '$centro' AND  e.ID IS NULL";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
 ?>
 <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
@@ -22,7 +22,8 @@
 </table> -->
    <a>
             <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novoPaciente"> Adicionar Paciente </a>
-            <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novaConsulta"> Adicionar Consulta </a>
+       <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=editarPaciente"> Editar Paciente </a>
+       <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=novaConsulta"> Adicionar Consulta </a>
             <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=apagarPaciente"> Apagar Paciente </a>
    </a>
 </div>

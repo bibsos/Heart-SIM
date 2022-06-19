@@ -2,7 +2,7 @@
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
         or die('Error connecting to the server: ' . mysqli_error($connect));
     $id = $_SESSION['ID'];
-    $query = "SELECT p.Nome AS 'Paciente', p.Contacto AS 'Contacto', p.Cartao_saude AS 'Número de Cartão Saúde', e.Classificacao AS 'Avaliação' FROM patient AS p 
+    $query = "SELECT p.Nome, p.Contacto, p.Cartao_saude, e.Classificacao, e.Data_consulta FROM patient AS p 
             INNER JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
             INNER JOIN users AS u ON e.ID_utilizador = u.ID
             WHERE u.ID = $id";
@@ -25,15 +25,17 @@
         </thead>
 <?php
     while($row = mysqli_fetch_array($result)){
-    $current_date = date("Y-m-d");
-    $difference = date_diff($current_date, $row[4]);
+        $time = date('z', strtotime($row[4]));
+        $data_consulta = date('d/m/y', strtotime($row[4]));
+        $current = getdate(time())['yday'];
+        $diff = $current - $time;
 ?>
         <TR>
             <TD class="w3-text-black"> <?php echo $row[0]; ?> </TD>
             <TD class="w3-text-black"> <?php echo $row[1]; ?> </TD>
             <TD class="w3-text-black"> <?php echo $row[2]; ?> </TD>
             <TD class="w3-text-black"> <?php echo $row[3]; ?> </TD>
-            <TD class="w3-text-black"> <?php echo $row[4]."(".$difference.")"; ?> </TD>
+            <TD class="w3-text-black"> <?php echo $data_consulta."(".$diff." dias)"; ?> </TD>
         </TR>
     <?php } ?>
 </table>
