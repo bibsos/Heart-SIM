@@ -29,6 +29,7 @@
         <tr style=" font-size: large"> <td> <b> Username: </b>  <?php echo $row[4]; ?> </td></tr>
         <!--<td class="w3-button"> <form action="updateProfile.php"> <button class="w3-btn w3-teal" type="submit" name="submit" value="Editar">Editar</button> </form>  </td>-->
         <tr><td> <form method="POST" action="index.php?action=atualizar_Perfil">
+                    <input type="hidden" value="<?php echo $ID?>" name="id_profile" id="id_profile">
                     <input style=" font-size: large" type="submit" name="submit" value="Editar" class="w3-teal w3-button">
                 </form>  </td> </tr>
     </table>

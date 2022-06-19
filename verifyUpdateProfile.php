@@ -5,66 +5,61 @@
 <?php
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
-    $ID = $_SESSION['ID'];
-    $utilizador = $_SESSION['utilizador'];
-    $query = "SELECT * FROM `users` AS u WHERE u.ID = $ID";
+    $id_profile = strval($_POST['id_profile']);
+    $query = "SELECT * FROM `users` AS u WHERE u.ID = '$id_profile'";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
     $row = mysqli_fetch_array($result);
 
-if(isset($_POST['submit'])) {
-    $ID=$row['ID'];
-    if(isset($_POST['tipo'])){
-        $tipo = $_POST['tipo'];
-    }
-    else{
-        $tipo = "";
-    }
-    $nome = $_POST['nome'];
-    $morada = $_POST['morada'];
-    $contacto = strval($_POST['contacto']);
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $fotografia = $_POST['foto'];
-    $instituicao = $_POST['instituicao'];
-    echo $instituicao;
-    if(empty($tipo)){
-        $tipo=$row['Tipo'];
-    }
-    if(empty($nome)){
-        $nome=$row['Nome'];
-    }
-    if(empty($morada)){
-        $morada=$row['Morada'];
-    }
-    if(empty($contacto)){
-        $contacto=$row['Contacto'];
-    }
-    if(empty($username)){
-        $username=$row['username'];
-    }
-    if(empty($password)){
-        $password=$row['password'];
-    }
-    if(empty($fotografia)){
-        $fotografia=$row['Fotografia'];
-    }
-    if(empty($instituicao)){
-        $instituicao=$row['Instituicao'];
-    }
-    $update = "UPDATE `users` AS u SET u.Tipo=$tipo,u.Nome=$nome,u.Morada=$morada,u.Contacto=$contacto,u.username=$username,u.password=$password,u.Fotografia=$fotografia,u.Instituicao=$instituicao WHERE u.ID='$ID' ";
-    $confirmation = "SELECT `Contacto` FROM users where $contacto = `Contacto`";
-    $confirm_query = mysqli_query($connect, $confirmation);
-    if (mysqli_num_rows($confirm_query) == 0){
-        if (mysqli_query($connect, $query)){
+    if(isset($_POST['submit'])) {
+        if(isset($_POST['nome'])) {
+            $nome = $_POST['nome'];
+        }
+        if(isset($_POST['morada'])){
+            $morada = $_POST['morada'];
+        }
+        if(isset($_POST['contacto'])){
+            $contacto = strval($_POST['contacto']);
+        }
+        if(isset($_POST['username'])){
+            $username = $_POST['username'];
+        }
+        if(isset($_POST['password'])){
+            $password = $_POST['password'];
+        }
+        if(isset($_POST['foto'])){
+            $fotografia = $_POST['foto'];
+        }
+        if(isset($_POST['instituicao'])){
+            $instituicao = $_POST['instituicao'];
+        }
+        if(empty($nome)){
+            $nome=$row['Nome'];
+        }
+        if(empty($morada)){
+            $morada=$row['Morada'];
+        }
+        if(empty($contacto)){
+            $contacto=$row['Contacto'];
+        }
+        if(empty($username)){
+            $username=$row['username'];
+        }
+        if(empty($password)){
+            $password=$row['password'];
+        }
+        if(empty($fotografia)){
+            $fotografia=$row['Fotografia'];
+        }
+        if(empty($instituicao)){
+            $instituicao=$row['Instituicao'];
+        }
+        $update = "UPDATE `users` SET Nome='$nome',Morada='$morada',Contacto='$contacto',username='$username',password='$password',Fotografia='$fotografia',Instituicao='$instituicao' WHERE ID='$id_profile' ";
+        if (mysqli_query($connect, $update)){
             echo("Alterações adicionadas com sucesso!");
         }
         else {
             echo "Erro a adicionar alterações:" . mysqli_error($connect);
         }
     }
-    else {
-        echo "Este paciente já existe!";
-    }
-}
 ?>
 <form type="POST" action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>

@@ -12,9 +12,9 @@ or die('Error connecting to the server: ' . mysqli_error($connect));
     <p style=" font-size: large"> <b> Data de Nascimento: </b> </p> <p> <input type="date" name="data_nascimento"</p>
     <p style=" font-size: large"> <b> Sexo: </b> </p>
     <p>
-        <input class="w3-radio" type="radio" id="F" name="Sexo" value="F">
+        <input class="w3-radio" type="radio" id="F" name="sexo" value="F">
         <label for="F">Feminino </label>
-        <input class="w3-radio" type="radio" id="M" name="Sexo" value="M">
+        <input class="w3-radio" type="radio" id="M" name="sexo" value="M">
         <label for="M"> Masculino </label>
     </p>
 

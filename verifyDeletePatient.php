@@ -2,12 +2,21 @@
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
         or die('Error connecting to the server: ' . mysqli_error($connect));
     if(isset($_POST['submit'])) {
-        $id = $_POST['id'];
-        $query = "DELETE FROM `patient` AS p WHERE p.ID = $id";
-        $result = mysqli_query($connect, $query);
+        $id = strval($_POST['id_paciente']);
+        echo $id;
+        $query = "DELETE FROM `patient` WHERE ID = '$id'";
+        if(mysqli_query($connect, $query)){
+            echo "Paciente eliminado com sucesso!";
+        }
+        else{
+            echo "Erro";
+        }
     }
-    include("index.php");
 ?>
+    <form method = "POST" action="index.php?action=registoConsulta">
+        <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Voltar">
+    </form>
+
 
 
 

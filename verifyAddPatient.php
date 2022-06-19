@@ -9,10 +9,9 @@
     if(isset($_POST['submit'])) {
         $id_user = $_SESSION['ID'];
         $centro_saude = $_SESSION['instituicao'];
-        $centro_saude=$_POST['centro'];
         $nome = $_POST['nome'];
         $data = $_POST['data_nascimento'];
-        $sexo = $_POST['Sexo'];
+        $sexo = $_POST['sexo'];
         $morada = $_POST['morada'];
         $contacto = $_POST['contacto'];
         $localidade = $_POST['localidade'];
@@ -35,7 +34,7 @@
         }
         else {$fotografia=NULL;}
 
-    $query = "INSERT INTO `patient`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista Alergias`, `Data Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
+    $query = "INSERT INTO `patient`(`ID`, `Nome`, `Morada`, `Localidade`, `Distrito`, `Contacto`, `Email`, `Cartao_saude`, `Fotografia`, `Lista_Alergias`, `Data_Nascimento`, `Sexo`, `NIF`, `Centro_saude`)
         VALUES (NULL,'$nome','$morada','$localidade','$distrito','$contacto','$email','$cartao_saude','$fotografia','$alergias','$data','$sexo','$nif', '$centro')";
     $confirmation = "SELECT * FROM patient where $cartao_saude = `Cartao_saude`";
     $confirm_query = mysqli_query($connect, $confirmation);

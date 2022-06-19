@@ -134,6 +134,9 @@ if(isset($_GET["action"])){
         case "verifySeePatient":
             $links = "verifySeePatient.php";
             break;
+        case "verifyAddEvent":
+            $links = "verifyAddEvent.php";
+            break;
         default:
             $links="homepage.php";
             break;

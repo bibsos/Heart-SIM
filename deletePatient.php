@@ -2,9 +2,7 @@
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
         or die('Error connecting to the server: ' . mysqli_error($connect));
     $id = $_SESSION['ID'];
-    $query_centro = "SELECT users.Instituicao FROM users WHERE users.ID = '$id'";
-    $result_centro = mysqli_query($connect, $query_centro);
-    $centro_saude = mysqli_fetch_array($result_centro)[0];
+    $centro_saude = $_SESSION['instituicao'];
     $query = "SELECT p.Nome AS 'Paciente', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p 
            LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
            WHERE p.Centro_saude = '$centro_saude'";
@@ -16,7 +14,7 @@
 </div>
 
 <div class="w3-padding w3-container">
-    <form method = "POST" action="verifyDeletePatient.php">
+    <form method = "POST" action="index.php?action=verifyDeletePatient">
         <p><label for = "id" style=" font-size: large"> <b> Selecione o paciente: </b> </label> </p>
         <select class="w3-select" name="id" id="id">
             <option value="" disabled selected> Escolha o paciente </option>
@@ -25,16 +23,18 @@
                 $cartao_saude_paciente = $rows[1];
                 $id_paciente = intval($rows[2]);
             ?>
-            <option value="<?php $id_paciente ?>"> <?php echo $nome_paciente.",".$cartao_saude_paciente;  ?> </option>
+            <option value="<?php echo $id_paciente ?>"> <?php echo $nome_paciente.",".$cartao_saude_paciente;  ?> </option>
             <?php } ?>
         </select>
+        <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Apagar">
+    </form>
 </div>
-<divclass="w3-padding w3-container">
-    <table>
+<div class="w3-padding w3-container">
         <tr>
-        </form>
-        <td> <form action="index.php?action=registoConsulta"> <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Voltar"> </form> </td>
-         <td><p><input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Apagar"></p> </td>
+        <td> <form method = "POST" action="index.php?action=registoConsulta"> <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Voltar"> </form></td>
+            <td><p><form method = "POST" action="index.php?action=verifyDeletePatient">
+                    <input type="hidden" name="id_paciente" value="<?php echo $_POST['id'] ?>">
+                    <input style=" font-size: large" class="w3-teal w3-button" type="submit" name="submit" value="Apagar"></form> </p> </td>
         </tr>
     </table>
 </div>

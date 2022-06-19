@@ -20,7 +20,7 @@
 </div>
 
 <div class="w3-padding w3-container">
-<form method = "POST" action="verifyAddEvent.php">
+<form method = "POST" action="index.php?action=verifyAddEvent">
     <p><label for = "paciente" style=" font-size: large"> <b> Selecione o paciente: </b> </label> </p>
     <select class="w3-select" name="paciente" id="paciente">
         <option value="" disabled selected> Escolha o paciente </option>
@@ -29,7 +29,7 @@
             $cartao_saude_paciente = $rows[1];
             $id_paciente = intval($rows[2]);
         ?>
-        <option  value="<?php $id_paciente ?>"> <?php echo $nome_paciente.",".$cartao_saude_paciente;  ?> </option>
+        <option  value="<?php echo $id_paciente ?>"> <?php echo $nome_paciente.",".$cartao_saude_paciente;  ?> </option>
         <?php } ?>
     </select>
     <p style=" font-size: large"> <b> NYHA: </b> <input class="w3-input"  type="number" name="nyha"</p>

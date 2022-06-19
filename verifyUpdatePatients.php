@@ -24,7 +24,6 @@ if(isset($_POST['submit'])) {
     $cartao_saude = $_POST['cartao_saude'];
     $alergias = $_POST['alergias'];
     $nif = $_POST['nif'];
-    $centro = "Charneca de Caparica";
 
 
     if(empty($nome)){

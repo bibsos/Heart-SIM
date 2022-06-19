@@ -3,8 +3,8 @@
     <h3>  Editar Perfil </h3>
 
     <?php
-        $utilizador = $_SESSION['utilizador'];
         if(isset($_POST['submit'])){
+            $id_profile = $_POST['id_profile'];
         ?>
             <form method="POST" action="index.php?action=verifyUpdateProfile">
                 <p>Nome: <input type="text" name="nome"> </p>
@@ -14,6 +14,7 @@
                 <p>Password: <input type="password" name="password"> </p>
                 <p>Fotografia: <input type="file" name="foto"> </p>
                 <p>Instituição: <input type="text" name="instituicao"> </p>
+                <p> <input type="hidden" value ="<?php echo $id_profile ?>" name="id_profile"> </p>
                 <p> <input type="submit" name="submit" value="Confirmar"></p>
             </form>
       <?php  } ?>

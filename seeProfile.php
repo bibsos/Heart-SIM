@@ -6,7 +6,7 @@
 if(isset($_POST['submit_profile'])){
     if(isset($_POST['username'])){
         $username = $_POST['username'];
-        $query = "SELECT u.Tipo, u.Nome, u.Morada, u.Contacto, u.Fotografia, u.username FROM users AS u 
+        $query = "SELECT u.Tipo, u.Nome, u.Morada, u.Contacto, u.Fotografia, u.username, u.ID FROM users AS u 
                 WHERE u.username = '$username'";
     }
     $result = mysqli_query($connect, $query);
@@ -27,7 +27,7 @@ if(isset($_POST['submit_profile'])){
                 <tr> <td> Username:  <?php echo $user[5]; ?> </td></tr>
             </table>
             <form method="POST" action="index.php?action=atualizar_Perfil">
-                <input type="hidden" name="utilizador" value="<?php echo $utilizador ?>">
+                <input type="hidden" value="<?php echo $user[6]?>" name="id_profile" id="id_profile">
                 <input type="submit" name="submit" value="Editar"> </form>
         </div>
         <?php
