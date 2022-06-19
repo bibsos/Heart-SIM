@@ -8,7 +8,7 @@ $query_mhc = "SELECT p.Nome, p.Centro_saude, p.Cartao_saude, e.Classificacao, e.
             WHERE e.Classificacao = '1' AND e.Relatorio IS NULL LIMIT 20 ";
 $query_mhd = "SELECT p.Nome, p.Centro_saude, p.Cartao_saude, e.Classificacao, p.ID FROM patient AS p
             INNER JOIN episodio_clinico AS e ON e.ID_paciente = p.ID
-            WHERE (e.Classificacao = '2' OR e.Classificacao = '3' OR e.Classificacao = '4') AND e.Relatorio IS NULL LIMIT 20";
+            WHERE (e.Classificacao = '2' OR e.Classificacao = '3') AND e.Relatorio IS NULL LIMIT 20";
 ?>
 
 <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
