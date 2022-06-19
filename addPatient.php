@@ -18,9 +18,30 @@ or die('Error connecting to the server: ' . mysqli_error($connect));
         <label for="M"> Masculino </label>
     </p>
 
+    <label for = "distrito" style=" font-size: large"> <b> Distrito: </b></label>
+    <select class="w3-select" name="distrito" id="distrito">
+        <option value="" disabled selected> ... </option>
+        <option value="Aveiro"> Aveiro </option>
+        <option value="Beja"> Beja </option>
+        <option value="Braga"> Braga </option>
+        <option value="Bragança"> Bragança </option>
+        <option value="Castelo Branco"> Castelo Branco </option>
+        <option value="Coimbra"> Coimbra </option>
+        <option value="Évora"> Évora </option>
+        <option value="Faro"> Faro </option>
+        <option value="Guarda"> Guarda </option>
+        <option value="Leiria"> Leiria </option>
+        <option value="Lisboa"> Lisboa </option>
+        <option value="Portalegre"> Portalegre </option>
+        <option value="Porto"> Porto </option>
+        <option value="Santarém"> Santarém </option>
+        <option value="Setúbal"> Setúbal </option>
+        <option value="Viana do Castelo"> Viana do Castelo </option>
+        <option value="Vila Real"> Vila Real </option>
+        <option value="Viseu"> Viseu </option>
+    </select>
     <p style=" font-size: large"> <b> Morada: </b> <input class="w3-input" type="text" name="morada"> </p>
     <p style=" font-size: large"> <b> Localidade: </b> <input class="w3-input" type="text" name="localidade"></p>
-    <p style=" font-size: large"> <b> Distrito: </b> <input class="w3-input" type="text" name="distrito"</p>
     <p style=" font-size: large"> <b> Contacto:  </b><input class="w3-input" type="number" name="contacto"> </p>
     <p style=" font-size: large"> <b> Email: </b> <input class="w3-input" type="email" name="email"</p>
     <p style=" font-size: large"> <b> Cartão de Saúde: </b> <input class="w3-input" type="number" name="cartao_saude"</p>
