@@ -3,6 +3,7 @@
 </div>
 
 <?php
+
     $connect = mysqli_connect('localhost', 'root', '','heartsim')
     or die('Error connecting to the server: ' . mysqli_error($connect));
     $id_profile = strval($_POST['id_profile']);
