@@ -25,7 +25,15 @@
         <tr style=" font-size: large"> <td> <b> Nome: </b> <?php echo $row[0]; ?> </td> </tr>
         <tr style=" font-size: large"> <td> <b> Morada: </b> <?php echo $row[1]; ?> </td> </tr>
         <tr style=" font-size: large"> <td> <b> Contacto: </b> <?php echo $row[2]; ?> </td></tr>
-        <tr style=" font-size: large"> <td> <b> Fotografia: </b> <?php echo $row[3]; ?> </td> </tr>
+
+        <!-- <tr style=" font-size: large"> <td> <b> Fotografia: </b> <?php echo $row[3]; ?> </td> </tr>-->
+        <tr style=" font-size: large"> <td> <b> Fotografia: </b>
+        <?php if (!is_null($row[3])){?>
+            <img src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($row[3]); ?> "> <?php }
+         else{ ?>
+             <img src="Screenshot%20(250).png" width="200" height="200">
+        <?php } ?> </td> </tr>
+
         <tr style=" font-size: large"> <td> <b> Username: </b>  <?php echo $row[4]; ?> </td></tr>
         <!--<td class="w3-button"> <form action="updateProfile.php"> <button class="w3-btn w3-teal" type="submit" name="submit" value="Editar">Editar</button> </form>  </td>-->
         <tr><td> <form method="POST" action="index.php?action=atualizar_Perfil">

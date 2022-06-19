@@ -6,10 +6,14 @@
     <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
         <h3> Lista de Espera </h3>
     </div>
+
     <div class="w3-margin">
     <a>
         <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=atenderPaciente"> Atender Paciente </a>
     </a>
+    </div>
+
+<div class="w3-padding w3-container" style="position: fixed; top:150px">
 <?php
 
     if($utilizador == 'MHC'){
@@ -20,7 +24,7 @@
         $_POST['pacientes_1'] = $query_1;
     ?>
 
-    <table>
+    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center w3-">
         <tr>
             <td> Nome </td>
             <td> Centro de Saúde </td>
@@ -45,6 +49,7 @@
         <?php
         }
     }
+
     if($utilizador == 'MHD'){
         $query_2 = "SELECT p.Nome, p.Centro_saude, p.Cartao_saude, e.Classificacao, e.Data_consulta, p.ID FROM patient AS p
             INNER JOIN episodio_clinico AS e ON e.ID_paciente = p.ID
@@ -62,7 +67,7 @@
         $result_4 = mysqli_query($connect, $query_4);
         $_POST['pacientes_4'] = $query_4;
     ?>
-    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center w3-large">
+    <table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center w3-large ">
         <tr>
             <td> Nome </td>
             <td> Centro de Saúde </td>
@@ -124,3 +129,4 @@
             }
             }
         ?>
+</div>
