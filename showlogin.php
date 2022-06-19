@@ -15,21 +15,21 @@
 <body>
 <div class="w3-row-padding w3-teal w3-padding-64 w3-container w3-center">
     <h3>  Iniciar sessão </h3>
-<form method="post" style="text-align:center" action="index.php?action=verifylogin">
-    <p>
-        Utilizador:
-        <input type="text" name="user">
-    </p>
-    <p>
-        Password:
-        <input type="password" name="pass">
-    </p>
-    <div>
-    <input type="submit" name="Submit" value="Submeter">
-    </div>
-</form>
-    <div class="w3-bottom">
-    <form action="index.php?action=homepage"> <input type="submit" name="submit" value="Voltar" style=" font-size: large" class="w3-teal w3-button"> </form>
+    <form method="post" style="text-align:center" action="index.php?action=verifylogin">
+        <p>
+            Utilizador:
+            <input type="text" name="user">
+        </p>
+        <p>
+            Password:
+            <input type="password" name="pass">
+        </p>
+        <div>
+            <input type="submit" name="Submit" value="Submeter" style=" font-size: large" class="w3-teal w3-button">
+        </div>
+    </form>
+    <div class="w3-bottom w3-light-grey">
+        <form action="index.php?action=homepage"> <input type="submit" name="submit" value="Voltar" style=" font-size: large" class="w3-light-grey w3-button"> </form>
     </div>
 </div>
 </body>

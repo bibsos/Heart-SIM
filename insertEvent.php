@@ -4,22 +4,22 @@
 
 <?php
 $connect = mysqli_connect('localhost', 'root', '','heartsim')
-    or die('Error connecting to the server: ' . mysqli_error($connect));
+or die('Error connecting to the server: ' . mysqli_error($connect));
 
 if(isset($_POST['submit_confirmar'])){
     $ID = $_SESSION['ID'];
-        $id_paciente = $_POST['id_paciente'];
-        $nyha = $_POST['nyha'];
-        $angor = $_POST['angor'];
-        $sincope = $_POST['sincope'];
-        $dispneia = $_POST['dispneia'];
-        $pa = $_POST['pa'];
-        $edema = $_POST['edema'];
-        $crepitacoes = $_POST['crepitacoes'];
-        $creatinina = $_POST['creatinina'];
-        $hemoglobina = $_POST['hemoglobina'];
-        $ejecao_ve = $_POST['ejecao_ve'];
-        $class_final = $_POST['class_final'];
+    $id_paciente = $_POST['id_paciente'];
+    $nyha = $_POST['nyha'];
+    $angor = $_POST['angor'];
+    $sincope = $_POST['sincope'];
+    $dispneia = $_POST['dispneia'];
+    $pa = $_POST['pa'];
+    $edema = $_POST['edema'];
+    $crepitacoes = $_POST['crepitacoes'];
+    $creatinina = $_POST['creatinina'];
+    $hemoglobina = $_POST['hemoglobina'];
+    $ejecao_ve = $_POST['ejecao_ve'];
+    $class_final = $_POST['class_final'];
     ?>
     <br>
     <?php
@@ -34,5 +34,5 @@ if(isset($_POST['submit_confirmar'])){
 }
 ?>
 <div>
-<form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
+    <form action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
 </div>

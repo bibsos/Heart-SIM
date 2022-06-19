@@ -1,8 +1,8 @@
 <?php
-    $connect = mysqli_connect('localhost', 'root', '','heartsim')
-    or die('Error connecting to the server: ' . mysqli_error($connect));
-    $utilizador = $_SESSION['utilizador'];
-    $query = "";
+$connect = mysqli_connect('localhost', 'root', '','heartsim')
+or die('Error connecting to the server: ' . mysqli_error($connect));
+$utilizador = $_SESSION['utilizador'];
+$query = "";
 if(isset($_POST['submit_profile'])){
     if(isset($_POST['username'])){
         $username = $_POST['username'];
@@ -16,7 +16,7 @@ if(isset($_POST['submit_profile'])){
     else{
         $user = mysqli_fetch_array($result);
         ?>
-        <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
             <h1>  Perfil de <?php echo $user[1]?> </h1>
         </div>
         <div class="w3-padding w3-margin">

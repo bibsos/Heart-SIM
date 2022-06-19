@@ -4,13 +4,13 @@
 
 <?php
 
-    $connect = mysqli_connect('localhost', 'root', '','heartsim')
-    or die('Error connecting to the server: ' . mysqli_error($connect));
-    $ID = $_SESSION['ID'];
-    $utilizador = $_SESSION['utilizador'];
-    $query = "SELECT * FROM `users` AS u WHERE u.ID = $ID";
-    $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
-    $row = mysqli_fetch_array($result);
+$connect = mysqli_connect('localhost', 'root', '','heartsim')
+or die('Error connecting to the server: ' . mysqli_error($connect));
+$ID = $_SESSION['ID'];
+$utilizador = $_SESSION['utilizador'];
+$query = "SELECT * FROM `users` AS u WHERE u.ID = $ID";
+$result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
+$row = mysqli_fetch_array($result);
 
 if(isset($_POST['submit'])) {
     $ID=$row['ID'];

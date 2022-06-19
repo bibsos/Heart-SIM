@@ -1,11 +1,11 @@
 <?php
-    $connect = mysqli_connect('localhost', 'root', '','heartsim')
-    or die('Error connecting to the server: ' . mysqli_error($connect));
-    $id = $_SESSION['ID'];
-    $centro_saude = $_SESSION['instituicao'];
-    $query = "SELECT p.Nome AS 'Paciente', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
+$connect = mysqli_connect('localhost', 'root', '','heartsim')
+or die('Error connecting to the server: ' . mysqli_error($connect));
+$id = $_SESSION['ID'];
+$centro_saude = $_SESSION['instituicao'];
+$query = "SELECT p.Nome AS 'Paciente', p.Cartao_saude AS 'Número de Cartão Saúde', p.ID AS 'ID' FROM patient AS p LEFT JOIN episodio_clinico AS e ON e.ID_paciente=p.ID
         WHERE p.Centro_saude = '$centro_saude' AND  e.ID IS NULL";
-    $result = mysqli_query($connect, $query);
+$result = mysqli_query($connect, $query);
 ?>
 <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
     <h1>  Editar Ficha de paciente </h1>
