@@ -18,20 +18,24 @@ if(isset($_POST['submit_profile'])){
         ?>
         <div class="w3-row-padding w3-padding-64 w3-container">
             <h1>  Perfil de <?php echo $user[1]?> </h1>
-            <table >
-                <tr> <td> Tipo: <?php echo $user[0]; ?> </td></tr>
-                <tr> <td> Nome: <?php echo $user[1]; ?> </td> </tr>
-                <tr> <td> Morada: <?php echo $user[2]; ?> </td> </tr>
-                <tr> <td> Contacto: <?php echo $user[3]; ?> </td></tr>
-                <tr> <td> Fotografia: <?php echo $user[4]; ?> </td> </tr>
-                <tr> <td> Username:  <?php echo $user[5]; ?> </td></tr>
+        </div>
+        <div class="w3-padding w3-margin">
+            <table class="w3-table">
+                <tr style=" font-size: large"> <td> <b> Tipo: </b> <?php echo $user[0]; ?> </td></tr>
+                <tr style=" font-size: large"> <td> <b> Nome: </b> <?php echo $user[1]; ?> </td> </tr>
+                <tr style=" font-size: large"> <td> <b> Morada: </b> <?php echo $user[2]; ?> </td> </tr>
+                <tr style=" font-size: large"> <td> <b> Contacto: </b> <?php echo $user[3]; ?> </td></tr>
+                <tr style=" font-size: large"> <td> <b> Fotografia: </b> <?php echo $user[4]; ?> </td> </tr>
+                <tr style=" font-size: large"> <td> <b> Username: </b>  <?php echo $user[5]; ?> </td></tr>
             </table>
             <form method="POST" action="index.php?action=atualizar_Perfil">
                 <input type="hidden" value="<?php echo $user[6]?>" name="id_profile" id="id_profile">
-                <input type="submit" name="submit" value="Editar"> </form>
+                <p>  <input style=" font-size: large" type="submit" name="submit" value="Editar" class="w3-teal w3-button">  </p>
         </div>
         <?php
     }
 }
 ?>
-<form action="index.php?action=listUsers"> <input type="submit" name="submit" value="Voltar"> </form>
+<div class="w3-padding w3-container w3-bottom">
+    <form action="index.php?action=listUsers"> <input style=" font-size: large" type="submit" name="submit" value="Voltar" class="w3-teal w3-button"> </form>
+</div>

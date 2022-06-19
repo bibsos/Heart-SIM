@@ -62,4 +62,4 @@
         }
     }
 ?>
-<form type="POST" action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar"> </form>
+<form type="POST" action="index.php?action=registoConsulta"> <input type="submit" name="submit" value="Voltar" style=" font-size: large" class="w3-teal w3-button"> </form>

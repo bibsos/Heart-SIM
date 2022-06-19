@@ -5,7 +5,6 @@
     $query = "SELECT `Nome`, `Morada`, `Contacto`, `Fotografia`, `username` FROM `users` AS u WHERE u.ID = $ID";
     $result = mysqli_query($connect, $query) or die('The query failed'.mysqli_error($connect));
     $row = mysqli_fetch_array($result);
-
 ?>
 
 <div class="w3-teal w3-row-padding w3-padding-64 w3-container">
@@ -26,6 +25,12 @@
         <tr style=" font-size: large"> <td> <b> Morada: </b> <?php echo $row[1]; ?> </td> </tr>
         <tr style=" font-size: large"> <td> <b> Contacto: </b> <?php echo $row[2]; ?> </td></tr>
         <tr style=" font-size: large"> <td> <b> Fotografia: </b> <?php echo $row[3]; ?> </td> </tr>
+        <tr style=" font-size: large"> <td> <b> Fotografia: </b>
+                <?php if (!is_null($row[3])){?>
+                    <img src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($row[3]); ?> "> <?php }
+                else{ ?>
+                    <img src="Screenshot%20(250).png" width="200" height="200">
+                <?php } ?> </td> </tr>
         <tr style=" font-size: large"> <td> <b> Username: </b>  <?php echo $row[4]; ?> </td></tr>
         <!--<td class="w3-button"> <form action="updateProfile.php"> <button class="w3-btn w3-teal" type="submit" name="submit" value="Editar">Editar</button> </form>  </td>-->
         <tr><td> <form method="POST" action="index.php?action=atualizar_Perfil">

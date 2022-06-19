@@ -8,8 +8,20 @@
         $contacto = $_POST['contacto'];
         $username = $_POST['username'];
         $password = hash("sha256", $_POST['password']);
-        $fotografia = $_POST['foto'];
+       // $fotografia = $_POST['foto'];
         $instituicao = $_POST['instituicao'];
+
+        if(!empty($_FILES["foto1"]["name"])){
+            $fileName = basename($_FILES["foto1"]["name"]);
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+            if(in_array($fileType, $allowTypes)){
+                $image = addslashes($_FILES['foto1']['tmp_name']);
+                $fotografia = addslashes(file_get_contents($image));
+            }
+        }
+        else {$fotografia=NULL;}
 
         $query = "INSERT INTO `users`(`ID`, `Tipo`, `Nome`, `Morada`, `Contacto`, `username`, `password`, `Fotografia`, `Instituicao`) 
         VALUES (NULL,'$tipo','$nome','$morada','$contacto','$username','$password','$fotografia', '$instituicao')";

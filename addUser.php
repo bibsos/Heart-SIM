@@ -20,7 +20,8 @@
         <p style=" font-size: large"> <b> Contacto: </b> <input class="w3-input" type="number" name="contacto"> </p>
         <p style=" font-size: large"> <b> Username: </b> <input class="w3-input" type="username" name="username"> </p>
         <p style=" font-size: large"> <b> Password: </b> <input class="w3-input" type="password" name="password"> </p>
-        <p style=" font-size: large"> <b> Fotografia: </b> <input type="file" name="foto"> </p>
+        <p><label for = "foto1"> <b style=" font-size: large"> Fotografia: </b></label></p>
+        <input type="file"  accept="image/*" id="foto1" name="foto1"> </p>
         <p style=" font-size: large"> <b> Instituição: </b> <input class="w3-input" type="text" name="instituicao"> </p>
         <p style=" font-size: large"> <input type="submit" name="submit" value="Adicionar Utilizador" class="w3-teal w3-button"></p>
     </form>

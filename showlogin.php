@@ -29,7 +29,7 @@
     </div>
 </form>
     <div class="w3-bottom">
-    <form action="index.php?action=homepage"> <input type="submit" name="submit" value="Voltar"> </form>
+    <form action="index.php?action=homepage"> <input type="submit" name="submit" value="Voltar" style=" font-size: large" class="w3-teal w3-button"> </form>
     </div>
 </div>
 </body>

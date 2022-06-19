@@ -10,6 +10,8 @@
     <a>
         <a style=" font-size: large" class="w3-button w3-bar-item w3-light-grey" href="index.php?action=atenderPaciente"> Atender Paciente </a>
     </a>
+    </div>
+<div class="w3-padding w3-container">
 <?php
 
     if($utilizador == 'MHC'){
@@ -20,7 +22,7 @@
         $_POST['pacientes_1'] = $query_1;
     ?>
 
-    <table>
+        <table class="w3-table w3-striped w3-bordered w3-hoverable w3-responsive w3-center w3-">
         <tr>
             <td> Nome </td>
             <td> Centro de Saúde </td>
@@ -44,6 +46,8 @@
         </tr>
         <?php
         }
+        ?>
+        </table <?php
     }
     if($utilizador == 'MHD'){
         $query_2 = "SELECT p.Nome, p.Centro_saude, p.Cartao_saude, e.Classificacao, e.Data_consulta, p.ID FROM patient AS p
@@ -122,5 +126,9 @@
             <?php
             }
             }
+            ?> </table>
+        <?php
             }
         ?>
+    </table>
+    </div>

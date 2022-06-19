@@ -26,7 +26,7 @@ or die('Error connecting to the server: ' . mysqli_error($connect));
     <p style=" font-size: large"> <b> Cartão de Saúde: </b> <input class="w3-input" type="number" name="cartao_saude"</p>
 
     <p><label for = "foto"> <b style=" font-size: large"> Fotografia do paciente: </b></label></p>
-    <input type="file"  accept="image/*" id="foto" name="foto"> </p>
+    <p> <input type="file"  accept="image/*" id="foto" name="foto"> </p>
     <p style=" font-size: large"> <b> Alergias: </b> <input class="w3-input" type="text" name="alergias"> </p>
     <p style=" font-size: large"> <b> NIF: </b> <input class="w3-input" type="number" name="nif"> </p>
     <p style=" font-size: large"> <input type="submit" name="submit" value="Adicionar Paciente" class="w3-teal w3-button"></p>
