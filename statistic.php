@@ -6,14 +6,18 @@
 <?php
 $connect = mysqli_connect('localhost', 'root', '','heartsim')
 or die('Error connecting to the server: ' . mysqli_error($connect));
-$query_class1 = "SELECT * FROM episodio_clinico AS e WHERE e.Classificacao = '1'";
-$result_class1 = count(mysqli_query($connect, $query_class1));
-$query_class2 = "SELECT * FROM episodio_clinico AS e WHERE e.Classificacao = '2'";
-$result_class2 = count(mysqli_query($connect, $query_class2));
-$query_class3 = "SELECT * FROM episodio_clinico AS e WHERE e.Classificacao = '3'";
-$result_class3 = count(mysqli_query($connect, $query_class3));
-$query_class4 = "SELECT * FROM episodio_clinico AS e WHERE e.Classificacao = '4'";
-$result_class4 = count(mysqli_query($connect, $query_class4));
+$query_class1 = "SELECT e.ID FROM `episodio_clinico` AS e WHERE e.Classificacao = '1'";
+$result_class1 = mysqli_query($connect, $query_class1);
+$num_class1 = mysqli_num_rows($result_class1);
+$query_class2 = "SELECT e.ID FROM `episodio_clinico` AS e WHERE e.Classificacao = '2'";
+$result_class2 = mysqli_query($connect, $query_class2);
+$num_class2 = mysqli_num_rows($result_class2);
+$query_class3 = "SELECT e.ID FROM `episodio_clinico` AS e WHERE e.Classificacao = '3'";
+$result_class3 = mysqli_query($connect, $query_class3);
+$num_class3 = mysqli_num_rows($result_class3);
+$query_class4 = "SELECT e.ID FROM episodio_clinico AS e WHERE e.Classificacao = '4'";
+$result_class4 = mysqli_query($connect, $query_class4);
+$num_class4 = mysqli_num_rows($result_class4);
 
 $query_fem = "SELECT * FROM patient AS p WHERE p.Sexo = 'F'";
 $result_fem = mysqli_query($connect, $query_fem);
@@ -146,7 +150,7 @@ $num_90_99 = mysqli_num_rows($result_90_99);
 
                 <script>
                     var xValues_class = ["1", "2", "3", "4"];
-                    var yValues_class = [<?php echo $result_class1.','.$result_class2.','.$result_class3.','.$result_class4?>];
+                    var yValues_class = [<?php echo $num_class1.','.$num_class2.','.$num_class3.','.$num_class4?>];
                     var barColors_class = [
                         "#b91d47",
                         "#00aba9",

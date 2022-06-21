@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
         $username = $_POST['username'];
     }
     if(isset($_POST['password'])){
-        $password = $_POST['password'];
+        $password = hash("sha256", $_POST['password']);
     }
     if(isset($_POST['foto'])){
         $fotografia = $_POST['foto'];
